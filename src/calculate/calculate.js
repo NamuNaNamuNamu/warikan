@@ -23,7 +23,7 @@ export function calculate(totalAmount, numberOfPeople, option, extra_info){
         case calculateOption.considerSettlement:
             return considerSettlement(totalAmount, numberOfPeople, extra_info);
         case calculateOption.considerDifferenceOfPortion:
-            return considerDifferenceOfPortion(totalAmount, numberOfPeople, extra_info);
+            // return considerDifferenceOfPortion(totalAmount, numberOfPeople, extra_info);
         default:
             throw Error("Selected option is not defined.");
     }

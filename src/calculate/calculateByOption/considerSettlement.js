@@ -1,19 +1,26 @@
-import { payerCategory } from "../../enum/payerCategory.js"
+// 精算をする人が少し得をする計算方法
 
-export function considerSettlement(_totalAmount, _numberOfPeople, _extra_info){
-    // TODO: to be implemented in branch "feature/additional_function".
-    console.warn("STUB: considerSettlement() will be implemented in branch \"feature/additional_function\"");
+import { payerCategory } from "../../enum/payerCategory.js";
 
-    return [
+export function considerSettlement(totalAmount, numberOfPeople, extra_info){
+    let result = [];
+
+    const amountOfNormalPerPerson = Math.ceil(totalAmount / numberOfPeople / extra_info.minimumAppreciationAmount) * extra_info.minimumAppreciationAmount;
+    const amountOfNormal = amountOfNormalPerPerson * (numberOfPeople - 1);
+    const amountOfSettler = totalAmount - amountOfNormal;
+
+    result.push(
         {
             payerCategory: payerCategory.settler,
-            amount: 999,
+            amount: amountOfSettler,
             numberOfPeople: 1
         },
         {
             payerCategory: payerCategory.normal,
-            amount: 1111,
-            numberOfPeople: 2
+            amount: amountOfNormalPerPerson,
+            numberOfPeople: numberOfPeople - 1
         }
-    ]
+    );
+
+    return result; 
 }
