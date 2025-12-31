@@ -10,7 +10,7 @@ export function normal(totalAmount, numberOfPeople){
 
     result.push(
         {
-            payerCategory: payerCategory.payALot,
+            payerCategory: payerCategory.normal,
             amount: minimumAmountPerPerson + 1,
             numberOfPeople: remainder
         },
