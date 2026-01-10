@@ -20,7 +20,7 @@ export function considerDifferenceOfPortion(totalAmount, numberOfPeople, _extra_
     //     3249.4 より大きい整数、つまり 3250 円以上で額を設定する。
     //     例: 4000 円で 2 人
     //   1-2. 金額確定
-    updateRemainder(remainder, extra_info);
+    updateRemainderPayALot(remainder, extra_info);
     result.push(getResultPayALot(extra_info));
 
     // 2. 少なく払う人
@@ -31,6 +31,9 @@ export function considerDifferenceOfPortion(totalAmount, numberOfPeople, _extra_
     //     2749 より小さい整数、つまり 2748 円以下で額を設定する。
     //     例: 2000 円で 1 人
     //   2-2. 金額確定
+    updateRemainderPayALittle(remainder, extra_info);
+    result.push(getResultPayALittle(extra_info));
+
     // 3. 残りをノーマルの計算方法で算出
     //   例:
     //   金額 ... 6247 円 (8247 - 2000 × 1)
@@ -39,9 +42,14 @@ export function considerDifferenceOfPortion(totalAmount, numberOfPeople, _extra_
     return result;
 }
 
-function updateRemainder(remainder, extra_info) {
+function updateRemainderPayALot(remainder, extra_info) {
     remainder.amount -= extra_info.payALot.amount * extra_info.payALot.numberOfPeople;
     remainder.numberOfPeople -= extra_info.payALot.numberOfPeople;
+}
+
+function updateRemainderPayALittle(remainder, extra_info) {
+    remainder.amount -= extra_info.payALittle.amount * extra_info.payALittle.numberOfPeople;
+    remainder.numberOfPeople -= extra_info.payALittle.numberOfPeople;
 }
 
 function getResultPayALot(extra_info) {
@@ -49,5 +57,13 @@ function getResultPayALot(extra_info) {
         payerCategory: payerCategory.payALot,
         amount: extra_info.payALot.amount,
         numberOfPeople: extra_info.payALot.numberOfPeople
+    }
+}
+
+function getResultPayALittle(extra_info) {
+    return {
+        payerCategory: payerCategory.payALittle,
+        amount: extra_info.payALittle.amount,
+        numberOfPeople: extra_info.payALittle.numberOfPeople
     }
 }
