@@ -1,5 +1,6 @@
 // 食べた量によって最大3段階まで支払い量に差をつけられる計算方法
 
+import { payerCategory } from "../../enum/payerCategory.js";
 import { normal } from "./normal.js";
 
 export function considerDifferenceOfPortion(totalAmount, numberOfPeople, _extra_info){
@@ -7,6 +8,10 @@ export function considerDifferenceOfPortion(totalAmount, numberOfPeople, _extra_
     // 例:
     // totalAmount = 16247 円
     // numberOfPeople = 5 人
+    let remainder = {
+        amount: totalAmount,
+        numberOfPeople: numberOfPeople
+    };
 
     // 1. 多く払う人
     //   1-1. 「多く払う人」の金額チェック。
@@ -15,6 +20,9 @@ export function considerDifferenceOfPortion(totalAmount, numberOfPeople, _extra_
     //     3249.4 より大きい整数、つまり 3250 円以上で額を設定する。
     //     例: 4000 円で 2 人
     //   1-2. 金額確定
+    updateRemainder(remainder, extra_info);
+    result.push(getResultPayALot(extra_info));
+
     // 2. 少なく払う人
     //   2-1. 「少なく払う人」の金額チェック。
     //     残った合計額を残った人数で割る。
@@ -27,7 +35,19 @@ export function considerDifferenceOfPortion(totalAmount, numberOfPeople, _extra_
     //   例:
     //   金額 ... 6247 円 (8247 - 2000 × 1)
     //   人数 ... 2 人 (3 - 1)
-    
-    result = result.concat(normal(totalAmount, numberOfPeople));
+    result = result.concat(normal(remainder.amount, remainder.numberOfPeople));
     return result;
+}
+
+function updateRemainder(remainder, extra_info) {
+    remainder.amount -= extra_info.payALot.amount * extra_info.payALot.numberOfPeople;
+    remainder.numberOfPeople -= extra_info.payALot.numberOfPeople;
+}
+
+function getResultPayALot(extra_info) {
+    return {
+        payerCategory: payerCategory.payALot,
+        amount: extra_info.payALot.amount,
+        numberOfPeople: extra_info.payALot.numberOfPeople
+    }
 }
