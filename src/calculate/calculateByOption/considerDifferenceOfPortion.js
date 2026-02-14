@@ -1,6 +1,12 @@
 // 食べた量によって最大3段階まで支払い量に差をつけられる計算方法
 
-import { payerCategory } from "../../enum/payerCategory.js";
+import { ErrorArray } from "./considerDifferenceOfPortion/errorArray.js";
+import { validate1 } from "./considerDifferenceOfPortion/validate/validate1.js";
+import { validate2 } from "./considerDifferenceOfPortion/validate/validate2.js";
+import { updateRemainderPayALot } from "./considerDifferenceOfPortion/helpers.js";
+import { updateRemainderPayALittle } from "./considerDifferenceOfPortion/helpers.js";
+import { getResultPayALot } from "./considerDifferenceOfPortion/helpers.js";
+import { getResultPayALittle } from "./considerDifferenceOfPortion/helpers.js";
 import { normal } from "./normal.js";
 
 export function considerDifferenceOfPortion(totalAmount, numberOfPeople, _extra_info){
@@ -57,123 +63,4 @@ export function considerDifferenceOfPortion(totalAmount, numberOfPeople, _extra_
     }
 
     return result;
-}
-
-function validate1(totalAmount, numberOfPeople, extra_info) {
-    let errors = new ErrorArray();
-
-    // 1. 多く払う人、少なく払う人の人数の合計が、総合計人数未満であることのチェック
-    if (numberOfPeople <= extra_info.payALot.numberOfPeople + extra_info.payALittle.numberOfPeople) {
-        errors.push("飲食量考慮オプション > message: 多く払う人、少なく払う人の合計が総合計人数以上になっています。");
-    }
-
-    // 2. 多く払う人、少なく払う人の支払合計額が、総支払い額を超えないこと
-    let amountByPayALot = extra_info.payALot.amount * extra_info.payALot.numberOfPeople;
-    let amountByPayALittle = extra_info.payALittle.amount * extra_info.payALittle.numberOfPeople;
-    if (totalAmount <= amountByPayALot + amountByPayALittle) {
-        errors.push("飲食量考慮オプション > message: 多く払う人、少なく払う人の支払合計額が総支払い額以上になっています。");
-    }
-
-    return errors;
-}
-
-function validate2(result) {
-    let errors = new ErrorArray();
-
-    // 多く払う人の額 > ノーマルの額 > 少なく払う人の額 になっていること
-    let payALotArray = [];
-    let payALittleArray = [];
-    let normalArray = [];
-
-    const categorizeResult = () => {
-        for (let resultElement of result) {
-            if (resultElement.payerCategory === payerCategory.payALot) {
-                payALotArray.push(resultElement);
-            }
-            else if (resultElement.payerCategory === payerCategory.payALittle) {
-                payALittleArray.push(resultElement);
-            }
-            else {
-                normalArray.push(resultElement);
-            }
-        }
-    }
-    categorizeResult();
-    
-    const checkPayALot = () => {
-        for (let payALot of payALotArray) {
-            for (let normal of normalArray) {
-                if (payALot.amount <= normal.amount) {
-                    errors.push("飲食量考慮オプション > message: 多く払う人の支払額が普通に支払う人の額を下回っています。");
-                    return;
-                }
-            }
-        }
-    }
-    const checkPayALittle = () => {
-        for (let payALittle of payALittleArray) {
-            for (let normal of normalArray) {
-                if (payALittle.amount >= normal.amount) {
-                    errors.push("飲食量考慮オプション > message: 少なく払う人の支払額が普通に支払う人の額を上回っています。");
-                    return;
-                }
-            }
-        }
-    }
-    checkPayALot(errors);
-    checkPayALittle(errors);
-    
-    return errors;
-}
-
-function updateRemainderPayALot(remainder, extra_info) {
-    remainder.amount -= extra_info.payALot.amount * extra_info.payALot.numberOfPeople;
-    remainder.numberOfPeople -= extra_info.payALot.numberOfPeople;
-}
-
-function updateRemainderPayALittle(remainder, extra_info) {
-    remainder.amount -= extra_info.payALittle.amount * extra_info.payALittle.numberOfPeople;
-    remainder.numberOfPeople -= extra_info.payALittle.numberOfPeople;
-}
-
-function getResultPayALot(extra_info) {
-    return {
-        payerCategory: payerCategory.payALot,
-        amount: extra_info.payALot.amount,
-        numberOfPeople: extra_info.payALot.numberOfPeople
-    }
-}
-
-function getResultPayALittle(extra_info) {
-    return {
-        payerCategory: payerCategory.payALittle,
-        amount: extra_info.payALittle.amount,
-        numberOfPeople: extra_info.payALittle.numberOfPeople
-    }
-}
-
-class ErrorArray {
-    constructor() {
-        this.errors = [];
-    }
-
-    push(errorMsg) {
-        this.errors.push(errorMsg);
-    }
-
-    merge(errorArray) {
-        this.errors = this.errors.concat(errorArray.all());
-    }
-
-    all() {
-        return this.errors;
-    }
-
-    isEmpty() {
-        return this.errors.length === 0;
-    }
-
-    isNotEmpty() {
-        return !this.isEmpty();
-    }
 }
