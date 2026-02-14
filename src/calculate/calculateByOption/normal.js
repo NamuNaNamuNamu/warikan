@@ -1,6 +1,7 @@
 // 通常の計算方法
 
 import { payerCategory } from "../../enum/payerCategory.js";
+import { pruneExcessElementFrom } from "./normal/helpers.js";
 
 export function normal(totalAmount, numberOfPeople){
     let result = [];
@@ -21,5 +22,5 @@ export function normal(totalAmount, numberOfPeople){
         }
     );
 
-    return result; 
+    return pruneExcessElementFrom(result); 
 }
