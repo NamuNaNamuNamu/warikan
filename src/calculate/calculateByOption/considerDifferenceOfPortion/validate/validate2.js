@@ -1,3 +1,6 @@
+// 算出された結果に対して以下をチェック
+// - 多く払う人の額 > ノーマルの額 > 少なく払う人の額 になっていること
+
 import { ErrorArray } from "../errorArray.js";
 import { payerCategory } from "../../../../enum/payerCategory.js";
 
