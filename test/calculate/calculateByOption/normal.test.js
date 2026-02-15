@@ -34,4 +34,26 @@ describe("通常の計算方法のテスト", () => {
             }
         ]);
     });
+
+    test("0人のとき", () => {
+        let totalAmount = 1000;
+        let numberOfPeople = 0;
+        
+        const result = normal(totalAmount, numberOfPeople);
+        expect(result).toEqual([]);
+    });
+
+    test("1人のとき", () => {
+        let totalAmount = 1000;
+        let numberOfPeople = 1;
+        
+        const result = normal(totalAmount, numberOfPeople);
+        expect(result).toEqual([
+            {
+                payerCategory: payerCategory.normal,
+                amount: 1000,
+                numberOfPeople: 1
+            }
+        ]);
+    });
 });
