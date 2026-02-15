@@ -1,7 +1,7 @@
 // 通常の計算方法
 
 import { payerCategory } from "../../enum/payerCategory.js";
-import { ErrorArray } from "./considerDifferenceOfPortion/errorArray.js";
+import { ErrorArray } from "./helpers/errorArray.js";
 import { validate } from "./normal/validate.js";
 import { pruneExcessElementFrom } from "./normal/helpers.js";
 

@@ -2,7 +2,7 @@
 // - 会計金額が1円以上であることのチェック
 // - 人数が1人以上であることのチェック
 
-import { ErrorArray } from "../considerDifferenceOfPortion/errorArray.js";
+import { ErrorArray } from "../helpers/errorArray.js";
 
 export function validate(totalAmount, numberOfPeople) {
     let errors = new ErrorArray();

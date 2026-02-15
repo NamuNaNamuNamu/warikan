@@ -1,5 +1,5 @@
 import { normal } from "../../../src/calculate/calculateByOption/normal.js";
-import { ErrorArray } from "../../../src/calculate/calculateByOption/considerDifferenceOfPortion/errorArray.js";
+import { ErrorArray } from "../../../src/calculate/calculateByOption/helpers/errorArray.js";
 import { payerCategory } from "../../../src/enum/payerCategory.js"; 
 
 describe("通常の計算方法のテスト", () => {

@@ -1,6 +1,6 @@
 // 食べた量によって最大3段階まで支払い量に差をつけられる計算方法
 
-import { ErrorArray } from "./considerDifferenceOfPortion/errorArray.js";
+import { ErrorArray } from "./helpers/errorArray.js";
 import { validate1 } from "./considerDifferenceOfPortion/validate/validate1.js";
 import { validate2 } from "./considerDifferenceOfPortion/validate/validate2.js";
 import { updateRemainderPayALot } from "./considerDifferenceOfPortion/helpers.js";
