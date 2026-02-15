@@ -4,7 +4,7 @@
 import { ErrorArray } from "../../helpers/errorArray.js";
 import { payerCategory } from "../../../../enum/payerCategory.js";
 
-export function validate2(result) {
+export function validateResult(result) {
     let errors = new ErrorArray();
 
     // 多く払う人の額 > ノーマルの額 > 少なく払う人の額 になっていること
