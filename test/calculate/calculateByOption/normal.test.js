@@ -1,4 +1,5 @@
 import { normal } from "../../../src/calculate/calculateByOption/normal.js";
+import { ErrorArray } from "../../../src/calculate/calculateByOption/considerDifferenceOfPortion/errorArray.js";
 import { payerCategory } from "../../../src/enum/payerCategory.js"; 
 
 describe("通常の計算方法のテスト", () => {
@@ -38,8 +39,12 @@ describe("通常の計算方法のテスト", () => {
     test("人数が0人のとき", () => {
         let totalAmount = 1000;
         let numberOfPeople = 0;
+
+        let expectedErrors = new ErrorArray();
+        expectedErrors.push("通常の計算方法 > message: 人数が1人未満になっています。");
         
-        expect(() => normal(totalAmount, numberOfPeople)).toThrow("通常の計算方法 > message: 人数が1人未満になっています。");
+        const errors = normal(totalAmount, numberOfPeople);
+        expect(errors).toEqual(expectedErrors);
     });
 
     test("人数が1人のとき", () => {
@@ -59,8 +64,12 @@ describe("通常の計算方法のテスト", () => {
     test("金額が0円のとき", () => {
         let totalAmount = 0;
         let numberOfPeople = 3;
+
+        let expectedErrors = new ErrorArray();
+        expectedErrors.push("通常の計算方法 > message: 会計金額が1円未満になっています。");
         
-        expect(() => normal(totalAmount, numberOfPeople)).toThrow("通常の計算方法 > message: 会計金額が1円未満になっています。");
+        const errors = normal(totalAmount, numberOfPeople);
+        expect(errors).toEqual(expectedErrors);
     });
 
     test("金額が1円のとき", () => {
