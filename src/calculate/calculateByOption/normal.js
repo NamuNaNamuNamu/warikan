@@ -1,10 +1,18 @@
 // 通常の計算方法
 
 import { payerCategory } from "../../enum/payerCategory.js";
+import { ErrorArray } from "./considerDifferenceOfPortion/errorArray.js";
+import { validate } from "./normal/validate.js";
 import { pruneExcessElementFrom } from "./normal/helpers.js";
 
 export function normal(totalAmount, numberOfPeople){
     let result = [];
+    let errors = new ErrorArray();
+
+    errors.merge(validate(totalAmount, numberOfPeople));
+    if (errors.isNotEmpty()) {
+        return errors;
+    }
 
     const minimumAmountPerPerson = Math.floor(totalAmount / numberOfPeople);
     const remainder = totalAmount - minimumAmountPerPerson * numberOfPeople;
