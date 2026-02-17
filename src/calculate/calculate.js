@@ -3,8 +3,8 @@
 // input
 // - 会計金額
 // - 人数
-// - 最大ありがとう額 (精算係ありがとうオプション付きの場合)
-// - 
+// - オプション
+// - オプションに付随した追加情報
 // output
 // 以下の要素を持つ辞書の配列
 // - その金額を払う人のカテゴリ
@@ -16,14 +16,14 @@ import { considerDifferenceOfPortion } from "./calculateByOption/considerDiffere
 import { considerSettlement } from "./calculateByOption/considerSettlement.js";
 import { normal } from "./calculateByOption/normal.js";
 
-export function calculate(totalAmount, numberOfPeople, option){
+export function calculate(totalAmount, numberOfPeople, option, extra_info){
     switch (option) {
         case calculateOption.normal:
             return normal(totalAmount, numberOfPeople);
         case calculateOption.considerSettlement:
-            return considerSettlement(totalAmount, numberOfPeople, );
+            return considerSettlement(totalAmount, numberOfPeople, extra_info);
         case calculateOption.considerDifferenceOfPortion:
-            return considerDifferenceOfPortion();
+            return considerDifferenceOfPortion(totalAmount, numberOfPeople, extra_info);
         default:
             throw Error("Selected option is not defined.");
     }
