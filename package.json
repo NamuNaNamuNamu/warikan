@@ -1,4 +1,5 @@
 {
+  "name": "warikan", 
   "description": "",
   "scripts": {
     "test": "jest"
