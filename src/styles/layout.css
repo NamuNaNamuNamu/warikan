@@ -6,6 +6,12 @@ area--title: 30 %
 area--btn: 30%
 */
 
+/* リセット CSS */
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     margin: 0; /* 余白の削除 */
 }
@@ -20,7 +26,11 @@ body {
 .area--title {
     flex: 3;
     background-color: gold;
+    
     /* コンテンツは下に寄せる */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .area--spacer {

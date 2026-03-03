@@ -1,0 +1,16 @@
+.app-title {
+    font-size: clamp(20px, 10vw, 48px); /* スマホは width は動的に変わらないので、dvw じゃなく vw を採用 */
+    text-align: left;
+    margin-left: 10%;
+    margin-bottom: 10%;
+}
+
+.app-subtitle {
+    font-size: clamp(10px, 5vw, 24px);
+    text-align: right;
+    margin-right: 10%;
+}
+
+.kan {
+    color: orange;
+}
