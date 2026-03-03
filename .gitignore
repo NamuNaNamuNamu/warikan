@@ -1,2 +1,5 @@
 # npm の依存フォルダ
 node_modules/
+
+# macOS が勝手に作る Finder 用のファイル
+.DS_Store
