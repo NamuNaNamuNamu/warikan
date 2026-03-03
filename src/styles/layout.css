@@ -25,7 +25,6 @@ body {
 
 .area--title {
     flex: 3;
-    background-color: gold;
 
     /* コンテンツは下に寄せる */
     display: flex;
@@ -35,13 +34,10 @@ body {
 
 .area--spacer {
     flex: 4;
-    background-color: lightgreen;
-    /* コンテンツは下に寄せる */
 }
 
 .area--btn {
     flex: 3;
-    background-color: orange;
 
     /* コンテンツは上に寄せる */
     display: flex;
