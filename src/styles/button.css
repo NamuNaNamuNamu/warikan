@@ -1,4 +1,4 @@
-a.btn {
+.btn {
     font-size: clamp(20px, 10vw, 48px); /* スマホは width は動的に変わらないので、dvw じゃなく vw を採用 */
     font-weight: 800;
     letter-spacing: 0.1em;
@@ -10,18 +10,21 @@ a.btn {
     align-items: center;
 
     position: relative;
-    padding: 2dvh 6vw;
     border-radius: 2vw;
 
     cursor: pointer;
     user-select: none;
     transition: all 0.3s;
+
+    border: none;
+    background: none;
+    appearance: none;
 }
 
-a.btn--start {
+.btn--start {
   margin-left: 10%;
   margin-right: 10%;
-  height: 25%;
+  height: clamp(60px, 40%, 248px);;
 
   color: #fff;
   background: #d20010;
