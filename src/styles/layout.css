@@ -26,7 +26,7 @@ body {
 .area--title {
     flex: 3;
     background-color: gold;
-    
+
     /* コンテンツは下に寄せる */
     display: flex;
     flex-direction: column;
@@ -42,5 +42,9 @@ body {
 .area--btn {
     flex: 3;
     background-color: orange;
+
     /* コンテンツは上に寄せる */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }

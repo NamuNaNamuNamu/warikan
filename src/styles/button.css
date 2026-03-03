@@ -1,0 +1,39 @@
+a.btn {
+    font-size: clamp(20px, 10vw, 48px); /* スマホは width は動的に変わらないので、dvw じゃなく vw を採用 */
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: #212529;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    padding: 2dvh 6vw;
+    border-radius: 2vw;
+
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s;
+}
+
+a.btn--start {
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 25%;
+
+  color: #fff;
+  background: #d20010;
+  box-shadow: 0 1dvh 0 #b9000e;
+}
+
+.fa-position-left {
+  position: absolute;
+  left: 4vw;
+}
+
+.fa-position-right {
+  position: absolute;
+  right: 4vw;
+}
