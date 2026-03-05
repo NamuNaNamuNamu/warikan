@@ -1,0 +1,31 @@
+.app-title {
+    font-size: clamp(20px, 10vw, 48px); /* スマホは width は動的に変わらないので、dvw じゃなく vw を採用 */
+    text-align: left;
+    margin-left: 10%;
+    margin-bottom: 10%;
+}
+
+.app-subtitle {
+    font-size: clamp(10px, 5vw, 24px);
+    text-align: right;
+    margin-right: 10%;
+}
+
+.kan {
+    position: relative;
+    display: inline-block;
+    color: orange;
+}
+
+.app-title .kan::before {
+    content: "";
+    position: absolute;
+    inset: -0.6em;
+
+    background: url("./../../img/ちょんちょん.png")
+                right 0.1em top 0.3em
+                / 0.8em auto
+                no-repeat;
+
+    z-index: -1;
+}
