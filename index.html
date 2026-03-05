@@ -13,6 +13,10 @@
     />
     <link 
         rel="stylesheet"
+        href="src/styles/screen.css"
+    />
+    <link 
+        rel="stylesheet"
         href="src/styles/app_title.css"
     />
     <link 
@@ -27,20 +31,9 @@
 </head>
 <body>
     <div class = "app">
-        <div class = "area--title">
-            <h2 class = "app-title">ワリ<span class = "kan">カン</span></h2>
-            <h2 class = "app-subtitle">ワリ<span class = "kan">カン</span>を<span class = "kan">カン</span>タンに</h2>
-        </div>
-
-        <div class = "area--spacer"></div>
-
-        <div class = "area--btn">
-            <button class="btn btn--start">    
-                <i class="fas fa-coins fa-position-left"></i>
-                スタート
-                <i class="fas fa-angle-right fa-position-right"></i>
-            </button>
-        </div>
+        <div class = "screen is-active" id = "screen-title"></div>
+        <div class = "screen" id = "screen-input"></div>
+        <div class = "screen" id = "screen-selectOption"></div>
 
         <script type = "module" src = "src/main.js"></script>
     </div>

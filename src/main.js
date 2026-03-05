@@ -1,5 +1,6 @@
 import { calculate } from "./calculate/calculate.js";
 import { calculateOption } from "./enum/calculateOption.js";
+import { screenSelector } from "./screenSeletor.js";
 
 let totalAmount = 16247;
 let numberOfPeople = 5;
@@ -17,3 +18,5 @@ let extra_info = {
 }
 
 console.log(calculate(totalAmount, numberOfPeople, calculateOption.considerDifferenceOfPortion, extra_info));
+
+screenSelector();
