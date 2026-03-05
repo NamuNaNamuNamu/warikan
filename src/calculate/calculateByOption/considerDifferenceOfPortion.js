@@ -9,7 +9,7 @@ import { getResultPayALot } from "./considerDifferenceOfPortion/helpers.js";
 import { getResultPayALittle } from "./considerDifferenceOfPortion/helpers.js";
 import { normal } from "./normal.js";
 
-export function considerDifferenceOfPortion(totalAmount, numberOfPeople, _extra_info){
+export function considerDifferenceOfPortion(totalAmount, numberOfPeople, extra_info){
     let result = [];
     let errors = new ErrorArray();
 
