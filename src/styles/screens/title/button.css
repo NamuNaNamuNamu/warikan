@@ -1,4 +1,4 @@
-.btn {
+.screen-title .btn {
     font-size: clamp(20px, 10vw, 48px); /* スマホは width は動的に変わらないので、dvw じゃなく vw を採用 */
     font-weight: 800;
     letter-spacing: 0.1em;
@@ -21,7 +21,7 @@
     appearance: none;
 }
 
-.btn--start {
+.screen-title .btn--start {
   margin-left: 10%;
   margin-right: 10%;
   height: clamp(60px, 40%, 248px);;
@@ -31,12 +31,12 @@
   box-shadow: 0 1dvh 0 #b9000e;
 }
 
-.fa-position-left {
+.screen-title .fa-position-left {
   position: absolute;
   left: 4vw;
 }
 
-.fa-position-right {
+.screen-title .fa-position-right {
   position: absolute;
   right: 4vw;
 }
