@@ -1,5 +1,6 @@
 /* JS エントリポイント */
 
-import { screenSelector } from "./screenSeletor.js";
+import { App } from "./app/App.js";
 
-screenSelector();
+const app = new App();
+app.start();
