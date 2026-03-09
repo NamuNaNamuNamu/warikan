@@ -16,29 +16,29 @@ export class ScreenManager {
         this.screens.input.innerHTML = inputHTML;
         this.screens.selectOption.innerHTML = selectOptionHTML;
 
-        this.activateScreenChanging();
+        this.#activateScreenChanging();
     }
 
-    activateScreenChanging() {
+    #activateScreenChanging() {
         document.addEventListener("click", (e) => {
             const button = e.target.closest("button");
             if (!button) return;
 
             if (button.id === "temp-move-to-screen-input") {
-                this.changeScreenTo(this.screens.input);
+                this.#changeScreenTo(this.screens.input);
             } else if (button.id === "temp-back-to-screen-title") {
-                this.changeScreenTo(this.screens.title);
+                this.#changeScreenTo(this.screens.title);
             } else if (button.id === "temp-move-to-screen-selectOption") {
-                this.changeScreenTo(this.screens.selectOption);
+                this.#changeScreenTo(this.screens.selectOption);
             } else if (button.id === "temp-back-to-screen-input") {
-                this.changeScreenTo(this.screens.input);
+                this.#changeScreenTo(this.screens.input);
             } else {
                 throw Error("想定されていないボタンIDを持つボタンが押されました。");
             }
         });
     }
 
-    changeScreenTo(screen) {
+    #changeScreenTo(screen) {
         document.querySelectorAll(".screen").forEach(element => {
             element.classList.remove("is-active");
         });
