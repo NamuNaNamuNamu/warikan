@@ -1,5 +1,4 @@
 .app {
-    margin-top: 0; /* 画面上部の余白の削除 (margin の相殺によるもの) */
     height: 100dvh;
     display: flex;
     flex-direction: column;
