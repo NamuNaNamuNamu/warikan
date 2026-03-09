@@ -1,0 +1,13 @@
+/* CSS エントリポイント */
+
+@import "./base/base.css";
+@import "./base/reset.css";
+
+@import "./layout/app.css";
+@import "./layout/screen.css";
+
+@import "./screens/title/app_title.css";
+@import "./screens/title/area.css";
+@import "./screens/title/button.css";
+
+@import "https://use.fontawesome.com/releases/v5.13.0/css/all.css";
