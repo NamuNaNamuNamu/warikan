@@ -1,9 +1,9 @@
 .screen {
     display: none;
+    flex: 1;
+    flex-direction: column;
 }
 
 .screen.is-active {
-    flex: 1;
     display: flex;
-    flex-direction: column;
 }
