@@ -1,11 +1,11 @@
-import { screenSelector } from "../screenSeletor.js";
+import { ScreenManager } from "../core/ScreenManager.js";
 
 export class App {
     constructor() {
-        
+        this.screenManager = new ScreenManager();
     }
 
     start() {
-        screenSelector();
+        this.screenManager.activate();
     }
 }
