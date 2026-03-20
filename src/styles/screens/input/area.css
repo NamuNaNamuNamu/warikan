@@ -1,0 +1,29 @@
+/* 
+app: 100 %
+
+area--title: 20 %
+余白: 60%
+area--btn: 20%
+*/
+
+.screen-input .area--progress_tracker {
+    flex: 2;
+
+    /* コンテンツは下に寄せる */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.screen-input .area--input {
+    flex: 6;
+}
+
+.screen-input .area--btn {
+    flex: 2;
+
+    /* コンテンツは上に寄せる */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}

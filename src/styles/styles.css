@@ -6,6 +6,8 @@
 @import "./layout/app.css";
 @import "./layout/screen.css";
 
+@import "./screens/input/area.css";
+
 @import "./screens/title/app_title.css";
 @import "./screens/title/area.css";
 @import "./screens/title/button.css";
