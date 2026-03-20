@@ -1,0 +1,33 @@
+/* TODO: これでうまく機能すればtitle画面のbtnと共通部品にする。 */
+.screen-input .btn {
+    font-size: clamp(20px, 10vw, 48px); /* スマホは width は動的に変わらないので、dvw じゃなく vw を採用 */
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: #212529;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    border-radius: 2vw;
+
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s;
+
+    border: none;
+    background: none;
+    appearance: none;
+}
+
+.screen-input .btn--next {
+  margin-left: 60%;
+  margin-right: 10%;
+  height: clamp(60px, 40%, 248px);;
+
+  color: #fff;
+  background: #d20010;
+  box-shadow: 0 1dvh 0 #b9000e;
+}
