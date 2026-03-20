@@ -3,6 +3,8 @@
 @import "./base/base.css";
 @import "./base/reset.css";
 
+@import "./components/button.css";
+
 @import "./layout/app.css";
 @import "./layout/screen.css";
 
