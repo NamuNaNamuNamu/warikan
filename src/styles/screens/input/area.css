@@ -1,26 +1,32 @@
 /* 
 app: 100 %
 
-area--progress_tracker: 25 %
-area--input: 50 %
+area--top_spacer: 3 %
+area--progress_tracker: 7 %
+area--input: 60 %
 area--btn: 25 %
 */
 
+.screen-input .area--top_spacer {
+    flex: 3;
+}
+
 .screen-input .area--progress_tracker {
-    flex: 1;
+    flex: 7;
 
     /* コンテンツは下に寄せる */
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    flex-direction: row;
     justify-content: flex-start;
 }
 
 .screen-input .area--input {
-    flex: 2;
+    flex: 60;
 }
 
 .screen-input .area--btn {
-    flex: 1;
+    flex: 25;
 
     /* コンテンツは上に寄せる */
     display: flex;
