@@ -1,4 +1,5 @@
 <div class = "area--top_spacer"></div>
+
 <div class = "area--progress_tracker">
     <div class = "area--spacer"></div>
     <div class = "area--step is-active">
@@ -16,10 +17,23 @@
     </div>
     <div class = "area--spacer"></div>
 </div>
+
 <div class = "area--input">
-    <p>仮: 会計金額</p>
-    <p>仮: 人数</p>
+    <div class = "area--spacer"></div>
+    <div class = "area--body">
+        <div class = "field">
+            <label for = "amount">会計金額：</label>
+            <input type = "text" inputmode = "numeric" pattern = "[0-9]*" id = "amount">
+            <span class = "unit">円</span>
+        </div>
+        <div class = "field">
+            <label for = "numPeople">　人数　：</label>
+            <input type = "text" inputmode = "numeric" pattern = "[0-9]*" id = "numPeople">
+            <span class = "unit">人</span>
+        </div>
+    </div>
 </div>
+
 <div class = "area--btn">
     <button id = "temp-move-to-screen-selectOption" class = "btn btn--next">次へ</button>
 </div>

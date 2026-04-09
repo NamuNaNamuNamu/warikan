@@ -10,6 +10,7 @@
 
 @import "./screens/input/area.css";
 @import "./screens/input/button.css";
+@import "./screens/input/input.css";
 @import "./screens/input/progress_tracker.css";
 
 @import "./screens/title/app_title.css";
