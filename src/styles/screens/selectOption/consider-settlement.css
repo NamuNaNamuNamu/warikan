@@ -1,16 +1,4 @@
-.screen-selectOption .area--consider-settlement .area--spacer {
-    flex: 5;
-}
-
-.screen-selectOption .area--consider-settlement .area--body {
-    flex: 95;
-    display: flex;
-    flex-direction: column;
-
-    gap: clamp(3px, 6vw, 72px);
-}
-
-.screen-selectOption .area--consider-settlement .area--body .option-title {
+.screen-selectOption .area--app-body .area--body .area--consider-settlement .option-title {
     flex: 50;
 
     display: flex;
@@ -20,7 +8,7 @@
     gap: clamp(2px, 4vw, 48px);
 }
 
-.screen-selectOption .area--consider-settlement .area--body .field {
+.screen-selectOption .area--app-body .area--body .area--consider-settlement .field {
     --height: clamp(3px, 6vw, 72px);
 
     flex: 50;
@@ -32,7 +20,7 @@
     gap: clamp(1px, 2vw, 24px);
 }
 
-.screen-selectOption .area--consider-settlement .area--body .field input {
+.screen-selectOption .area--app-body .area--body .area--consider-settlement .field input {
     font-size: inherit;
     width: clamp(12px, 24vw, 288px);
     height: var(--height);

@@ -19,24 +19,78 @@
     <div class = "area--spacer"></div>
 </div>
 
-<div class = "area--consider-settlement">
+<div class = "area--app-body">
     <div class = "area--spacer"></div>
     <div class = "area--body">
-        <div class = "option-title">
-            <span>精算係ありがとうオプション</span>
-            <label class = "toggle-switch">
-                <input type = "checkbox" class = "visually-hidden">
-                <span class = "slider"></span>
-            </label>
+        <div class = "area--consider-settlement">
+            <div class = "option-title">
+                <span>精算係ありがとうオプション</span>
+                <label class = "toggle-switch">
+                    <input type = "checkbox" class = "visually-hidden">
+                    <span class = "slider"></span>
+                </label>
+            </div>
+            <div class = "field">
+                <label for = "maximum-appreciation-amount">最大ありがとう額：</label>
+                <input type = "text" inputmode = "numeric" pattern = "[0-9]*" id = "maximum-appreciation-amount">
+                <span class = "unit">円</span>
+            </div>
         </div>
-        <div class = "field">
-            <label for = "maximum-appreciation-amount">最大ありがとう額：</label>
-            <input type = "text" inputmode = "numeric" pattern = "[0-9]*" id = "maximum-appreciation-amount">
-            <span class = "unit">円</span>
+            
+        <div class = "area--consider-difference-of-portion">
+            <div class = "option-title">
+                <span>飲食量考慮オプション</span>
+                <label class = "toggle-switch">
+                    <input type = "checkbox" class = "visually-hidden">
+                    <span class = "slider"></span>
+                </label>
+            </div>
+            <div class = "pay-a-lot">
+                <div class = "payer-category">
+                    <span>多く払う人　</span>
+                    <label class = "toggle-switch">
+                        <input type = "checkbox" class = "visually-hidden">
+                        <span class = "slider"></span>
+                    </label>
+                </div>
+                <div class = "fields">
+                    <div class = "field">
+                        <label for = "amount-pay-a-lot">　額：</label>
+                        <input type = "text" inputmode = "numeric" pattern = "[0-9]*" id = "amount-pay-a-lot">
+                        <span class = "unit">円</span>
+                    </div>
+                    <div class = "field">
+                        <label for = "num-people-pay-a-lot">人数：</label>
+                        <input type = "text" inputmode = "numeric" pattern = "[0-9]*" id = "num-people-pay-a-lot">
+                        <span class = "unit">人</span>
+                    </div>
+                </div>
+            </div>
+            <div class = "pay-a-little">
+                <div class = "payer-category">
+                    <span>少なく払う人</span>
+                    <label class = "toggle-switch">
+                        <input type = "checkbox" class = "visually-hidden">
+                        <span class = "slider"></span>
+                    </label>
+                </div>
+                <div class = "fields">
+                    <div class = "field">
+                        <label for = "amount-pay-a-little">　額：</label>
+                        <input type = "text" inputmode = "numeric" pattern = "[0-9]*" id = "amount-pay-a-little">
+                        <span class = "unit">円</span>
+                    </div>
+                    <div class = "field">
+                        <label for = "num-people-pay-a-little">人数：</label>
+                        <input type = "text" inputmode = "numeric" pattern = "[0-9]*" id = "num-people-pay-a-little">
+                        <span class = "unit">人</span>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <div class = "area--result"></div>
     </div>
 </div>
-<div class = "area--consider-difference-of-portion"></div>
-<div class = "area--result"></div>
 
 <!-- <button id = "temp-back-to-screen-input">戻る</button> -->

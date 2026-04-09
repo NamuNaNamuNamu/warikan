@@ -15,6 +15,7 @@
 @import "./screens/input/input.css";
 
 @import "./screens/selectOption/area.css";
+@import "./screens/selectOption/consider-difference-of-portion.css";
 @import "./screens/selectOption/consider-settlement.css";
 
 @import "./screens/title/app_title.css";
