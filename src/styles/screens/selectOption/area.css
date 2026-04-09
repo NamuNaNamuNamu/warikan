@@ -1,0 +1,27 @@
+.screen-selectOption .area--top_spacer {
+    flex: 3;
+}
+
+.screen-selectOption .area--progress_tracker {
+    flex: 7;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.screen-selectOption .area--consider-settlement {
+    flex: 20;
+    background-color: aqua;
+}
+
+.screen-selectOption .area--consider-difference-of-portion {
+    flex: 40;
+    background-color: orange;
+}
+
+.screen-selectOption .area--result {
+    flex: 30;
+    background-color: greenyellow;
+}

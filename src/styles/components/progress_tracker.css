@@ -1,19 +1,19 @@
-.screen-input .area--progress_tracker .area--step {
+.area--progress_tracker .area--step {
     flex: 30;
 }
 
-.screen-input .area--progress_tracker .area--arrow {
+.area--progress_tracker .area--arrow {
     flex: 20;
     display: flex;
     justify-content: center;
 }
 
-.screen-input .area--progress_tracker .area--spacer {
+.area--progress_tracker .area--spacer {
     flex: 10;
 }
 
 /* internal */
-.screen-input .area--progress_tracker .area--arrow .arrow {
+.area--progress_tracker .area--arrow .arrow {
     width: 0;
     height: 0;
     border-left: 8px solid black;
@@ -23,17 +23,17 @@
     margin-right: 1px;
 }
 
-.screen-input .area--progress_tracker .area--step.is-active {
+.area--progress_tracker .area--step.is-active {
     color: blue;
     font-weight: bold;
 }
 
-.screen-input .area--progress_tracker .area--step .step_number {
+.area--progress_tracker .area--step .step_number {
     font-size: clamp(4px, 3.2vw, 24px);
     text-align: left;
 }
 
-.screen-input .area--progress_tracker .area--step .step_text {
+.area--progress_tracker .area--step .step_text {
     font-size: clamp(5px, 4vw, 30px);
     text-align: left;
 }

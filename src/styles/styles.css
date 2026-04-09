@@ -4,6 +4,7 @@
 @import "./base/reset.css";
 
 @import "./components/button.css";
+@import "./components/progress_tracker.css";
 
 @import "./layout/app.css";
 @import "./layout/screen.css";
@@ -11,7 +12,8 @@
 @import "./screens/input/area.css";
 @import "./screens/input/button.css";
 @import "./screens/input/input.css";
-@import "./screens/input/progress_tracker.css";
+
+@import "./screens/selectOption/area.css";
 
 @import "./screens/title/app_title.css";
 @import "./screens/title/area.css";
