@@ -5,6 +5,7 @@
 
 @import "./components/button.css";
 @import "./components/progress_tracker.css";
+@import "./components/toggle-switch.css";
 
 @import "./layout/app.css";
 @import "./layout/screen.css";
@@ -14,6 +15,7 @@
 @import "./screens/input/input.css";
 
 @import "./screens/selectOption/area.css";
+@import "./screens/selectOption/consider-settlement.css";
 
 @import "./screens/title/app_title.css";
 @import "./screens/title/area.css";

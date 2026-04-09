@@ -13,7 +13,10 @@
 
 .screen-selectOption .area--consider-settlement {
     flex: 20;
-    background-color: aqua;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
 }
 
 .screen-selectOption .area--consider-difference-of-portion {
