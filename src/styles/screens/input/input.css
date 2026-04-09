@@ -19,6 +19,7 @@
 }
 
 .screen-input .area--input .area--body .field input {
-    width: clamp(18px, 36vw, 432px);;
+    font-size: inherit;
+    width: clamp(18px, 36vw, 432px);
     height: clamp(4px, 8vw, 96px)
 }
