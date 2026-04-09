@@ -21,15 +21,15 @@
 
     display: grid;
     grid-template-columns:
-        clamp(10px, 20vw, 240px)   /* payer-category */
-        clamp(3px, 6vw, 36px)      /* num-people */
-        clamp(2px, 4vw, 48px)      /* unit-num-people */
-        clamp(2px, 4vw, 48px)      /* ha */
-        clamp(8px, 16vw, 192px)    /* amount */
-        clamp(2px, 4vw, 48px);     /* unit-amount */
+        5em                     /* payer-category */
+        clamp(1em, 6vw, 8em)    /* num-people */
+        1.5em                   /* unit-num-people */
+        1em                     /* ha */
+        clamp(3em, 20vw, 24em)  /* amount */
+        1.5em;                  /* unit-amount */
 
     align-items: center;
-    column-gap: clamp(1px, 2vw, 24px);
+    column-gap: 0;
 }
 
 .screen-selectOption .area--app-body .area--body .area--result .area--others .area--body > div > span {

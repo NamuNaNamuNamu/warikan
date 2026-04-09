@@ -13,6 +13,7 @@
   display: inline-block;
   width: var(--switch-width);
   height: var(--switch-height);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .toggle-switch input.visually-hidden {

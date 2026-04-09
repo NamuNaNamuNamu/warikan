@@ -1,9 +1,9 @@
 .screen-input .btn--next {
-  margin-left: 60%;
-  margin-right: 10%;
-  height: clamp(60px, 40%, 248px);
+    margin-left: 60%;
+    margin-right: 10%;
+    height: clamp(60px, 40%, 248px);
 
-  color: #fff;
-  background: #d20010;
-  box-shadow: 0 1dvh 0 #b9000e;
+    color: #fff;
+    background: #d20010;
+    box-shadow: 0 1dvh 0 #b9000e;
 }
