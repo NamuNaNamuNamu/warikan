@@ -46,5 +46,7 @@
 
 .screen-selectOption .area--app-body .area--body .area--result {
     flex: 35;
-    background-color: greenyellow;
+
+    display: flex;
+    flex-direction: column;
 }

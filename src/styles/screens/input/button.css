@@ -1,7 +1,7 @@
 .screen-input .btn--next {
   margin-left: 60%;
   margin-right: 10%;
-  height: clamp(60px, 40%, 248px);;
+  height: clamp(60px, 40%, 248px);
 
   color: #fff;
   background: #d20010;
