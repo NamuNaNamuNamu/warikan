@@ -4,7 +4,7 @@ app: 100 %
 area--top_spacer: 3 %
 area--progress_tracker: 7 %
 area--input: 60 %
-area--btn: 25 %
+area--button: 25 %
 */
 
 .screen-input .area--top_spacer {
@@ -28,7 +28,7 @@ area--btn: 25 %
     align-items: center;
 }
 
-.screen-input .area--btn {
+.screen-input .area--button {
     flex: 25;
 
     /* コンテンツは上に寄せる */

@@ -1,4 +1,4 @@
-.btn {
+.button {
     font-size: clamp(20px, 10vw, 48px); /* スマホは width は動的に変わらないので、dvw じゃなく vw を採用 */
     font-weight: 800;
     letter-spacing: 0.1em;

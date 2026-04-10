@@ -3,7 +3,7 @@ app: 100 %
 
 area--title: 30 %
 余白: 40 %
-area--btn: 30 %
+area--button: 30 %
 */
 
 .screen-title .area--title {
@@ -19,7 +19,7 @@ area--btn: 30 %
     flex: 4;
 }
 
-.screen-title .area--btn {
+.screen-title .area--button {
     flex: 3;
 
     /* コンテンツは上に寄せる */
