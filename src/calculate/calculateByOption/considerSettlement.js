@@ -1,7 +1,7 @@
 // 精算をする人が少し得をする計算方法
 // TODO: test\calculate\calculateByOption\considerSettlement.test.js の結果が通るように要修正
 
-import { payerCategory } from "../../enum/PayerCategory.js";
+import { PayerCategory } from "../../enum/PayerCategory.js";
 
 export function considerSettlement(totalAmount, numberOfPeople, extra_info){
     let result = [];
@@ -12,12 +12,12 @@ export function considerSettlement(totalAmount, numberOfPeople, extra_info){
 
     result.push(
         {
-            payerCategory: payerCategory.settler,
+            payerCategory: PayerCategory.SETTLER,
             amount: amountOfSettler,
             numberOfPeople: 1
         },
         {
-            payerCategory: payerCategory.normal,
+            payerCategory: PayerCategory.NORMAL,
             amount: amountOfNormalPerPerson,
             numberOfPeople: numberOfPeople - 1
         }

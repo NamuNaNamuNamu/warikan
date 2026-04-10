@@ -1,5 +1,5 @@
 import { considerDifferenceOfPortion } from "../../../src/calculate/calculateByOption/considerDifferenceOfPortion";
-import { payerCategory } from "../../../src/enum/payerCategory";
+import { PayerCategory } from "../../../src/enum/PayerCategory.js";
 
 describe("飲食量考慮オプションのテスト", () => {
     test("通常パターン1", () => {
@@ -20,22 +20,22 @@ describe("飲食量考慮オプションのテスト", () => {
         const result = considerDifferenceOfPortion(totalAmount, numberOfPeople, extra_info);
         expect(result).toEqual([
             {
-                payerCategory: payerCategory.payALot,
+                payerCategory: PayerCategory.PAY_A_LOT,
                 amount: 4000,
                 numberOfPeople: 2
             },
             {
-                payerCategory: payerCategory.payALittle,
+                payerCategory: PayerCategory.PAY_A_LITTLE,
                 amount: 2000,
                 numberOfPeople: 1
             },
             {
-                payerCategory: payerCategory.normal,
+                payerCategory: PayerCategory.NORMAL_ADJUSTER,
                 amount: 3124,
                 numberOfPeople: 1
             },
             {
-                payerCategory: payerCategory.normal,
+                payerCategory: PayerCategory.NORMAL,
                 amount: 3123,
                 numberOfPeople: 1
             }

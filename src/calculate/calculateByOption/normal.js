@@ -1,6 +1,6 @@
 // 通常の計算方法
 
-import { payerCategory } from "../../enum/PayerCategory.js";
+import { PayerCategory } from "../../enum/PayerCategory.js";
 import { ErrorArray } from "./helpers/ErrorArray.js";
 import { validate } from "./normal/validate.js";
 import { pruneExcessElementFrom } from "./normal/helpers.js";
@@ -19,12 +19,12 @@ export function normal(totalAmount, numberOfPeople){
 
     result.push(
         {
-            payerCategory: payerCategory.normal,
+            payerCategory: PayerCategory.NORMAL_ADJUSTER,
             amount: minimumAmountPerPerson + 1,
             numberOfPeople: remainder
         },
         {
-            payerCategory: payerCategory.normal,
+            payerCategory: PayerCategory.NORMAL,
             amount: minimumAmountPerPerson,
             numberOfPeople: numberOfPeople - remainder
         }

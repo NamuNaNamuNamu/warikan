@@ -1,6 +1,6 @@
 import { normal } from "../../../src/calculate/calculateByOption/normal.js";
 import { ErrorArray } from "../../../src/calculate/calculateByOption/helpers/ErrorArray.js";
-import { payerCategory } from "../../../src/enum/PayerCategory.js"; 
+import { PayerCategory } from "../../../src/enum/PayerCategory.js"; 
 
 describe("通常の計算方法のテスト", () => {
     test("割り切れないパターン", () => {
@@ -10,12 +10,12 @@ describe("通常の計算方法のテスト", () => {
         const result = normal(totalAmount, numberOfPeople);
         expect(result).toEqual([
             {
-                payerCategory: payerCategory.normal,
+                payerCategory: PayerCategory.NORMAL_ADJUSTER,
                 amount: 3334,
                 numberOfPeople: 1
             },
             {
-                payerCategory: payerCategory.normal,
+                payerCategory: PayerCategory.NORMAL,
                 amount: 3333,
                 numberOfPeople: 2
             }
@@ -29,7 +29,7 @@ describe("通常の計算方法のテスト", () => {
         const result = normal(totalAmount, numberOfPeople);
         expect(result).toEqual([
             {
-                payerCategory: payerCategory.normal,
+                payerCategory: PayerCategory.NORMAL,
                 amount: 4000,
                 numberOfPeople: 4
             }
@@ -54,7 +54,7 @@ describe("通常の計算方法のテスト", () => {
         const result = normal(totalAmount, numberOfPeople);
         expect(result).toEqual([
             {
-                payerCategory: payerCategory.normal,
+                payerCategory: PayerCategory.NORMAL,
                 amount: 1000,
                 numberOfPeople: 1
             }
@@ -79,12 +79,12 @@ describe("通常の計算方法のテスト", () => {
         const result = normal(totalAmount, numberOfPeople);
         expect(result).toEqual([
             {
-                payerCategory: payerCategory.normal,
+                payerCategory: PayerCategory.NORMAL_ADJUSTER,
                 amount: 1,
                 numberOfPeople: 1
             },
             {
-                payerCategory: payerCategory.normal,
+                payerCategory: PayerCategory.NORMAL,
                 amount: 0,
                 numberOfPeople: 2
             }

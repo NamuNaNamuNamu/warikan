@@ -1,6 +1,6 @@
 import { considerSettlement } from "../../../src/calculate/calculateByOption/considerSettlement.js";
 import { ErrorArray } from "../../../src/calculate/calculateByOption/helpers/ErrorArray.js";
-import { payerCategory } from "../../../src/enum/PayerCategory.js";
+import { PayerCategory } from "../../../src/enum/PayerCategory.js";
 
 describe("精算係ありがとうオプションのテスト", () => {
     test("通常パターン1", () => {
@@ -13,12 +13,12 @@ describe("精算係ありがとうオプションのテスト", () => {
         const result = considerSettlement(totalAmount, numberOfPeople, extra_info);
         expect(result).toEqual([
             {
-                payerCategory: payerCategory.settler,
+                payerCategory: PayerCategory.SETTLER,
                 amount: 3048,
                 numberOfPeople: 1
             },
             {
-                payerCategory: payerCategory.normal,
+                payerCategory: PayerCategory.NORMAL,
                 amount: 3100,
                 numberOfPeople: 2
             }
@@ -35,12 +35,12 @@ describe("精算係ありがとうオプションのテスト", () => {
         const result = considerSettlement(totalAmount, numberOfPeople, extra_info);
         expect(result).toEqual([
             {
-                payerCategory: payerCategory.settler,
+                payerCategory: PayerCategory.SETTLER,
                 amount: 2296,
                 numberOfPeople: 1
             },
             {
-                payerCategory: payerCategory.normal,
+                payerCategory: PayerCategory.NORMAL,
                 amount: 2500,
                 numberOfPeople: 2
             }
@@ -57,12 +57,12 @@ describe("精算係ありがとうオプションのテスト", () => {
         const result = considerSettlement(totalAmount, numberOfPeople, extra_info);
         expect(result).toEqual([
             {
-                payerCategory: payerCategory.settler,
+                payerCategory: PayerCategory.SETTLER,
                 amount: 2096,
                 numberOfPeople: 1
             },
             {
-                payerCategory: payerCategory.normal,
+                payerCategory: PayerCategory.NORMAL,
                 amount: 2600,
                 numberOfPeople: 2
             }
@@ -93,7 +93,7 @@ describe("精算係ありがとうオプションのテスト", () => {
         const result = considerSettlement(totalAmount, numberOfPeople, extra_info);
         expect(result).toEqual([
             {
-                payerCategory: payerCategory.settler,
+                payerCategory: PayerCategory.SETTLER,
                 amount: 1000,
                 numberOfPeople: 1
             }
@@ -125,17 +125,17 @@ describe("精算係ありがとうオプションのテスト", () => {
         const result = considerSettlement(totalAmount, numberOfPeople, extra_info);
         expect(result).toEqual([
             {
-                payerCategory: payerCategory.settler,
+                payerCategory: PayerCategory.SETTLER,
                 amount: 0,
                 numberOfPeople: 1
             },
             {
-                payerCategory: payerCategory.normal,
+                payerCategory: PayerCategory.NORMAL_ADJUSTER,
                 amount: 1,
                 numberOfPeople: 1
             },
             {
-                payerCategory: payerCategory.normal,
+                payerCategory: PayerCategory.NORMAL,
                 amount: 0,
                 numberOfPeople: 1
             }
