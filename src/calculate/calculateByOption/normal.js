@@ -3,7 +3,7 @@
 import { PayerCategory } from "../../enum/PayerCategory.js";
 import { validate } from "./normal/validate.js";
 import { ErrorArray } from "./helpers/ErrorArray.js";
-import { pruneExcessElementFrom } from "./helpers/pruneExcessElementFrom.js";
+import { pruneExcessElementFrom } from "./shared/pruneExcessElementFrom.js";
 
 export function normal(totalAmount, numberOfPeople){
     let result = [];

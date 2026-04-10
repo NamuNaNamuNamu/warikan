@@ -4,7 +4,7 @@
 import { PayerCategory } from "../../enum/PayerCategory.js";
 import { validate } from "./considerSettlement/validate.js";
 import { ErrorArray } from "./helpers/ErrorArray.js";
-import { pruneExcessElementFrom } from "./helpers/pruneExcessElementFrom.js";
+import { pruneExcessElementFrom } from "./shared/pruneExcessElementFrom.js";
 
 export function considerSettlement(totalAmount, numberOfPeople, extra_info){
     let result = [];
