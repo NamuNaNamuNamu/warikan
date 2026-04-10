@@ -1,26 +1,3 @@
-.screen-title .btn {
-    font-size: clamp(20px, 10vw, 48px); /* スマホは width は動的に変わらないので、dvw じゃなく vw を採用 */
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    color: #212529;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: relative;
-    border-radius: 2vw;
-
-    cursor: pointer;
-    user-select: none;
-    transition: all 0.3s;
-
-    border: none;
-    background: none;
-    appearance: none;
-}
-
 .screen-title .btn--start {
   margin-left: 10%;
   margin-right: 10%;

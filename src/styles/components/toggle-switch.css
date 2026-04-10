@@ -1,0 +1,57 @@
+.toggle-switch {
+  --switch-width: 52px;
+  --switch-height: 32px;
+  --knob-size: 28px;
+  --padding: 2px;
+  --move-distance: calc(
+    var(--switch-width) - var(--knob-size) - var(--padding) * 2
+  );
+  --toggle-duration: 0.25s;
+  --toggle-easing: ease-out;
+
+  position: relative;
+  display: inline-block;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.toggle-switch input.visually-hidden {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-switch .slider {
+  --radius-full: 999px;
+
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  background-color: #d1d1d6;
+  border-radius: var(--radius-full);
+  transition: background-color var(--toggle-duration) var(--toggle-easing);
+}
+
+.toggle-switch .slider::before {
+  --radius-circle: 50%;
+
+  content: "";
+  position: absolute;
+  width: var(--knob-size);
+  height: var(--knob-size);
+  left: var(--padding);
+  top: var(--padding);
+  background-color: white;
+  border-radius: var(--radius-circle);
+  transition: transform var(--toggle-duration) var(--toggle-easing);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.toggle-switch input:checked + .slider {
+  background-color: #34c759; /* iOSっぽい緑 */
+}
+
+.toggle-switch input:checked + .slider::before {
+  transform: translateX(var(--move-distance));
+}

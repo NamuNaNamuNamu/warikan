@@ -3,3 +3,6 @@ node_modules/
 
 # macOS が勝手に作る Finder 用のファイル
 .DS_Store
+
+# vscode設定
+.vscode/settings.json

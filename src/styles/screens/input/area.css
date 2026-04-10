@@ -1,0 +1,38 @@
+/* 
+app: 100 %
+
+area--top_spacer: 3 %
+area--progress_tracker: 7 %
+area--input: 60 %
+area--btn: 25 %
+*/
+
+.screen-input .area--top_spacer {
+    flex: 3;
+}
+
+.screen-input .area--progress_tracker {
+    flex: 7;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.screen-input .area--input {
+    flex: 60;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.screen-input .area--btn {
+    flex: 25;
+
+    /* コンテンツは上に寄せる */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
