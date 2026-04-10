@@ -1,9 +1,9 @@
 // 通常の計算方法
 
 import { PayerCategory } from "../../enum/PayerCategory.js";
-import { ErrorArray } from "./helpers/ErrorArray.js";
 import { validate } from "./normal/validate.js";
-import { pruneExcessElementFrom } from "./normal/helpers.js";
+import { ErrorArray } from "./helpers/ErrorArray.js";
+import { pruneExcessElementFrom } from "./helpers/pruneExcessElementFrom.js";
 
 export function normal(totalAmount, numberOfPeople){
     let result = [];

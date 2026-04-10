@@ -2,9 +2,18 @@
 // TODO: test\calculate\calculateByOption\considerSettlement.test.js の結果が通るように要修正
 
 import { PayerCategory } from "../../enum/PayerCategory.js";
+import { validate } from "./considerSettlement/validate.js";
+import { ErrorArray } from "./helpers/ErrorArray.js";
+import { pruneExcessElementFrom } from "./helpers/pruneExcessElementFrom.js";
 
 export function considerSettlement(totalAmount, numberOfPeople, extra_info){
     let result = [];
+    let errors = new ErrorArray();
+
+    errors.merge(validate(totalAmount, numberOfPeople));
+    if (errors.isNotEmpty()) {
+        return errors;
+    }
 
     const amountOfNormalPerPerson = Math.ceil(totalAmount / numberOfPeople / extra_info.minimumAppreciationAmount) * extra_info.minimumAppreciationAmount;
     const amountOfNormal = amountOfNormalPerPerson * (numberOfPeople - 1);
@@ -23,5 +32,5 @@ export function considerSettlement(totalAmount, numberOfPeople, extra_info){
         }
     );
 
-    return result; 
+    return pruneExcessElementFrom(result); 
 }
