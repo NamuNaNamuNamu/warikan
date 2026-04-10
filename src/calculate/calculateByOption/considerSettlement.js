@@ -2,7 +2,10 @@
 // TODO: test\calculate\calculateByOption\considerSettlement.test.js の結果が通るように要修正
 
 import { PayerCategory } from "../../enum/PayerCategory.js";
+import { ceilTo } from "./considerSettlement/ceilTo.js";
+import { pushSettlerResult } from "./considerSettlement/pushSettlerResult.js";
 import { validate } from "./considerSettlement/validate.js";
+import { normal } from "./normal.js";
 import { ErrorArray } from "./shared/ErrorArray.js";
 import { pruneExcessElementFrom } from "./shared/pruneExcessElementFrom.js";
 
@@ -15,7 +18,14 @@ export function considerSettlement(totalAmount, numberOfPeople, extra_info){
         return errors;
     }
 
-    const amountOfNormalPerPerson = Math.ceil(totalAmount / numberOfPeople / extra_info.minimumAppreciationAmount) * extra_info.minimumAppreciationAmount;
+    const maximumAppreciationAmount = extra_info.maximumAppreciationAmount;
+    const simpleAmountPerPerson = totalAmount / numberOfPeople;
+
+    if (simpleAmountPerPerson < maximumAppreciationAmount) {
+        return pushSettlerResult(normal(totalAmount, numberOfPeople - 1));
+    }
+
+    const amountOfNormalPerPerson = ceilTo(simpleAmountPerPerson, { unit: maximumAppreciationAmount });
     const amountOfNormal = amountOfNormalPerPerson * (numberOfPeople - 1);
     const amountOfSettler = totalAmount - amountOfNormal;
 

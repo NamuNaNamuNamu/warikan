@@ -1,4 +1,4 @@
-import { considerDifferenceOfPortion } from "../../../src/calculate/calculateByOption/considerDifferenceOfPortion";
+import { considerDifferenceOfPortion } from "../../../src/calculate/calculateByOption/considerDifferenceOfPortion.js";
 import { PayerCategory } from "../../../src/enum/PayerCategory.js";
 
 describe("飲食量考慮オプションのテスト", () => {

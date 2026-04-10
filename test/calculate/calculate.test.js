@@ -39,7 +39,7 @@ describe("calculate 関数の条件分岐テスト", () => {
         let numberOfPeople = 3;
         let option = CalculateOption.CONSIDER_SETTLEMENT;
         let extra_info = {
-            minimumAppreciationAmount: 100, // 最大ありがとう額
+            maximumAppreciationAmount: 100, // 最大ありがとう額
         };
 
         const _unusedValue = calculate(totalAmount, numberOfPeople, option, extra_info);

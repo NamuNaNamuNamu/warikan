@@ -7,7 +7,7 @@ describe("精算係ありがとうオプションのテスト", () => {
         let totalAmount = 9248;
         let numberOfPeople = 3;
         let extra_info = {
-            minimumAppreciationAmount: 100,
+            maximumAppreciationAmount: 100,
         }
         
         const result = considerSettlement(totalAmount, numberOfPeople, extra_info);
@@ -29,7 +29,7 @@ describe("精算係ありがとうオプションのテスト", () => {
         let totalAmount = 7296;
         let numberOfPeople = 3;
         let extra_info = {
-            minimumAppreciationAmount: 100,
+            maximumAppreciationAmount: 100,
         }
         
         const result = considerSettlement(totalAmount, numberOfPeople, extra_info);
@@ -51,7 +51,7 @@ describe("精算係ありがとうオプションのテスト", () => {
         let totalAmount = 7296;
         let numberOfPeople = 3;
         let extra_info = {
-            minimumAppreciationAmount: 200,
+            maximumAppreciationAmount: 200,
         }
         
         const result = considerSettlement(totalAmount, numberOfPeople, extra_info);
@@ -73,7 +73,7 @@ describe("精算係ありがとうオプションのテスト", () => {
         let totalAmount = 1000;
         let numberOfPeople = 0;
         let extra_info = {
-            minimumAppreciationAmount: 100,
+            maximumAppreciationAmount: 100,
         }
 
         let expectedErrors = new ErrorArray();
@@ -87,7 +87,7 @@ describe("精算係ありがとうオプションのテスト", () => {
         let totalAmount = 1000;
         let numberOfPeople = 1;
         let extra_info = {
-            minimumAppreciationAmount: 100,
+            maximumAppreciationAmount: 100,
         }
         
         const result = considerSettlement(totalAmount, numberOfPeople, extra_info);
@@ -104,7 +104,7 @@ describe("精算係ありがとうオプションのテスト", () => {
         let totalAmount = 0;
         let numberOfPeople = 3;
         let extra_info = {
-            minimumAppreciationAmount: 100,
+            maximumAppreciationAmount: 100,
         }
 
         let expectedErrors = new ErrorArray();
@@ -119,7 +119,7 @@ describe("精算係ありがとうオプションのテスト", () => {
         let numberOfPeople = 3;
         
         let extra_info = {
-            minimumAppreciationAmount: 100,
+            maximumAppreciationAmount: 100,
         }
         
         const result = considerSettlement(totalAmount, numberOfPeople, extra_info);
