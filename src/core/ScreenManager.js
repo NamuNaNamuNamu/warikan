@@ -1,6 +1,6 @@
-import titleHTML from './../screens/title.html?raw'
-import inputHTML from './../screens/input.html?raw'
-import selectOptionHTML from './../screens/selectOption.html?raw'
+import titleHTML from './../screens/title/title.html?raw'
+import inputHTML from './../screens/input/input.html?raw'
+import selectOptionHTML from './../screens/selectOption/selectOption.html?raw'
 
 export class ScreenManager {
     constructor() {
