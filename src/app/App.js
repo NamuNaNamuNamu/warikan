@@ -1,11 +1,9 @@
-import { ScreenManager } from "../core/ScreenManager.js";
+import { buttonClickBinder } from "../core/ButtonClickBinder.js";
+import { htmlInjector } from "../core/HtmlInjector.js";
 
 export class App {
-    constructor() {
-        this.screenManager = new ScreenManager();
-    }
-
     start() {
-        this.screenManager.activate();
+        htmlInjector.injectAll();
+        buttonClickBinder.bindAll();
     }
 }
