@@ -1,6 +1,6 @@
 import { normal } from "../../../src/calculate/calculateByOption/normal.js";
 import { ErrorArray } from "../../../src/calculate/calculateByOption/helpers/ErrorArray.js";
-import { payerCategory } from "../../../src/enum/payerCategory.js"; 
+import { payerCategory } from "../../../src/enum/PayerCategory.js"; 
 
 describe("通常の計算方法のテスト", () => {
     test("割り切れないパターン", () => {

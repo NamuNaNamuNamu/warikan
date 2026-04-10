@@ -2,7 +2,7 @@
 // - 多く払う人の額 > ノーマルの額 > 少なく払う人の額 になっていること
 
 import { ErrorArray } from "../../helpers/ErrorArray.js";
-import { payerCategory } from "../../../../enum/payerCategory.js";
+import { payerCategory } from "../../../../enum/PayerCategory.js";
 
 export function validateResult(result) {
     let errors = new ErrorArray();

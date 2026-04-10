@@ -1,6 +1,6 @@
 // 通常の計算方法
 
-import { payerCategory } from "../../enum/payerCategory.js";
+import { payerCategory } from "../../enum/PayerCategory.js";
 import { ErrorArray } from "./helpers/ErrorArray.js";
 import { validate } from "./normal/validate.js";
 import { pruneExcessElementFrom } from "./normal/helpers.js";

@@ -1,4 +1,4 @@
-import { payerCategory } from "../../../enum/payerCategory.js";
+import { payerCategory } from "../../../enum/PayerCategory.js";
 
 export function updateRemainderPayALot(remainder, extra_info) {
     remainder.amount -= extra_info.payALot.amount * extra_info.payALot.numberOfPeople;
