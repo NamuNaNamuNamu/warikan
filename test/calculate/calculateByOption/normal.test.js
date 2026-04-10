@@ -1,5 +1,5 @@
 import { normal } from "../../../src/calculate/calculateByOption/normal.js";
-import { ErrorArray } from "../../../src/calculate/calculateByOption/helpers/ErrorArray.js";
+import { ErrorArray } from "../../../src/calculate/calculateByOption/shared/ErrorArray.js";
 import { PayerCategory } from "../../../src/enum/PayerCategory.js"; 
 import { CalculateOption } from "../../../src/enum/CalculateOption.js";
 

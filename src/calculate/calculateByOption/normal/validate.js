@@ -3,7 +3,7 @@
 // - 人数が1人以上であることのチェック
 
 import { CalculateOption } from "../../../enum/CalculateOption.js";
-import { ErrorArray } from "../helpers/ErrorArray.js";
+import { ErrorArray } from "../shared/ErrorArray.js";
 
 export function validate(totalAmount, numberOfPeople) {
     let errors = new ErrorArray();

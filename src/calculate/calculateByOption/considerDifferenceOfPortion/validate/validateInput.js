@@ -2,7 +2,7 @@
 // - 多く払う人、少なく払う人の人数の合計が、総合計人数未満であることのチェック
 // - 多く払う人、少なく払う人の支払合計額が、総支払い額を超えないこと
 
-import { ErrorArray } from "../../helpers/ErrorArray.js";
+import { ErrorArray } from "../../shared/ErrorArray.js";
 
 export function validateInput(totalAmount, numberOfPeople, extra_info) {
     let errors = new ErrorArray();

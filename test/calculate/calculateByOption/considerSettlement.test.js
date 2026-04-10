@@ -1,5 +1,5 @@
 import { considerSettlement } from "../../../src/calculate/calculateByOption/considerSettlement.js";
-import { ErrorArray } from "../../../src/calculate/calculateByOption/helpers/ErrorArray.js";
+import { ErrorArray } from "../../../src/calculate/calculateByOption/shared/ErrorArray.js";
 import { PayerCategory } from "../../../src/enum/PayerCategory.js";
 
 describe("精算係ありがとうオプションのテスト", () => {
