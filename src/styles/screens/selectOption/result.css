@@ -1,0 +1,49 @@
+.screen-selectOption .area--app-body .area--body .area--result .area--title {
+    flex: 20;
+
+    display: flex;
+    align-items: center;
+}
+
+.screen-selectOption .area--app-body .area--body .area--result .area--title .title-result {
+    font-size: clamp(2.25px, 4.5vw, 54px);
+}
+
+.screen-selectOption .area--app-body .area--body .area--result .area--others {
+    flex: 80;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.screen-selectOption .area--app-body .area--body .area--result .area--others .area--body > div {
+    flex: 60;
+
+    display: grid;
+    grid-template-columns:
+        5em                     /* payer-category */
+        clamp(1em, 6vw, 8em)    /* num-people */
+        1.5em                   /* unit-num-people */
+        1em                     /* ha */
+        clamp(3em, 20vw, 24em)  /* amount */
+        1.5em;                  /* unit-amount */
+
+    align-items: center;
+    column-gap: 0;
+}
+
+.screen-selectOption .area--app-body .area--body .area--result .area--others .area--body > div > span {
+    justify-self: end;
+}
+
+.screen-selectOption .area--app-body .area--body .area--result .area--others .area--body .amount {
+    font-weight: bold;
+}
+
+.screen-selectOption .area--app-body .area--body .area--result .area--others .area--button {
+    flex: 40;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

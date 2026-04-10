@@ -1,0 +1,8 @@
+.screen-selectOption .area--app-body .area--body .area--result .area--others .area--button .btn--close {
+    margin-right: 10%;
+    height: clamp(60px, 50%, 248px);
+
+    color: #fff;
+    background: #d20010;
+    box-shadow: 0 1dvh 0 #b9000e;
+}
