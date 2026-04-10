@@ -7,7 +7,7 @@ export class ScreenManager {
         this.screens = {
             title: document.getElementById("screen-title"),
             input: document.getElementById("screen-input"),
-            selectOption: document.getElementById("screen-selectOption")
+            selectOption: document.getElementById("screen-select-option")
         }
     }
 
@@ -28,7 +28,7 @@ export class ScreenManager {
                 this.#changeScreenTo(this.screens.input);
             } else if (button.id === "temp-back-to-screen-title") {
                 this.#changeScreenTo(this.screens.title);
-            } else if (button.id === "temp-move-to-screen-selectOption") {
+            } else if (button.id === "temp-move-to-screen-select-option") {
                 this.#changeScreenTo(this.screens.selectOption);
             } else if (button.id === "temp-back-to-screen-input") {
                 this.#changeScreenTo(this.screens.input);
