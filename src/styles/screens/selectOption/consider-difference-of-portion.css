@@ -1,4 +1,4 @@
-.screen-selectOption .area--app-body .area--body .area--consider-difference-of-portion .option-title {
+.screen-select-option .area--app-body .area--body .area--consider-difference-of-portion .option-title {
     flex: 20;
 
     display: flex;
@@ -8,8 +8,8 @@
     gap: clamp(2px, 4vw, 48px);
 }
 
-.screen-selectOption .area--app-body .area--body .area--consider-difference-of-portion .pay-a-lot,
-.screen-selectOption .area--app-body .area--body .area--consider-difference-of-portion .pay-a-little {
+.screen-select-option .area--app-body .area--body .area--consider-difference-of-portion .pay-a-lot,
+.screen-select-option .area--app-body .area--body .area--consider-difference-of-portion .pay-a-little {
     flex: 40;
 
     display: flex;
@@ -17,7 +17,7 @@
     flex-direction: row;
 }
 
-.screen-selectOption .area--app-body .area--body .area--consider-difference-of-portion .payer-category {
+.screen-select-option .area--app-body .area--body .area--consider-difference-of-portion .payer-category {
     flex: 40;
 
     display: flex;
@@ -27,7 +27,7 @@
     gap: clamp(0.5px, 1vw, 12px);
 }
 
-.screen-selectOption .area--app-body .area--body .area--consider-difference-of-portion .fields {
+.screen-select-option .area--app-body .area--body .area--consider-difference-of-portion .fields {
     flex: 60;
     
     --height: clamp(3px, 6vw, 72px);
@@ -40,7 +40,7 @@
     gap: clamp(1px, 2vw, 24px);
 }
 
-.screen-selectOption .area--app-body .area--body .area--consider-difference-of-portion .fields .field input {
+.screen-select-option .area--app-body .area--body .area--consider-difference-of-portion .fields .field input {
     font-size: inherit;
     width: clamp(12px, 24vw, 288px);
     height: var(--height);

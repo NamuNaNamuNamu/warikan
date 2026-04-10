@@ -1,22 +1,22 @@
-.screen-selectOption .area--app-body .area--body .area--result .area--title {
+.screen-select-option .area--app-body .area--body .area--result .area--title {
     flex: 20;
 
     display: flex;
     align-items: center;
 }
 
-.screen-selectOption .area--app-body .area--body .area--result .area--title .title-result {
+.screen-select-option .area--app-body .area--body .area--result .area--title .title-result {
     font-size: clamp(2.25px, 4.5vw, 54px);
 }
 
-.screen-selectOption .area--app-body .area--body .area--result .area--others {
+.screen-select-option .area--app-body .area--body .area--result .area--others {
     flex: 80;
 
     display: flex;
     flex-direction: row;
 }
 
-.screen-selectOption .area--app-body .area--body .area--result .area--others .area--body > div {
+.screen-select-option .area--app-body .area--body .area--result .area--others .area--body > div {
     flex: 60;
 
     display: grid;
@@ -32,15 +32,15 @@
     column-gap: 0;
 }
 
-.screen-selectOption .area--app-body .area--body .area--result .area--others .area--body > div > span {
+.screen-select-option .area--app-body .area--body .area--result .area--others .area--body > div > span {
     justify-self: end;
 }
 
-.screen-selectOption .area--app-body .area--body .area--result .area--others .area--body .amount {
+.screen-select-option .area--app-body .area--body .area--result .area--others .area--body .amount {
     font-weight: bold;
 }
 
-.screen-selectOption .area--app-body .area--body .area--result .area--others .area--button {
+.screen-select-option .area--app-body .area--body .area--result .area--others .area--button {
     flex: 40;
 
     display: flex;
