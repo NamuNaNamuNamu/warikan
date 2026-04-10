@@ -1,6 +1,7 @@
 import { normal } from "../../../src/calculate/calculateByOption/normal.js";
 import { ErrorArray } from "../../../src/calculate/calculateByOption/helpers/ErrorArray.js";
 import { PayerCategory } from "../../../src/enum/PayerCategory.js"; 
+import { CalculateOption } from "../../../src/enum/CalculateOption.js";
 
 describe("通常の計算方法のテスト", () => {
     test("割り切れないパターン", () => {
@@ -41,7 +42,7 @@ describe("通常の計算方法のテスト", () => {
         let numberOfPeople = 0;
 
         let expectedErrors = new ErrorArray();
-        expectedErrors.push("通常の計算方法 > message: 人数が1人未満になっています。");
+        expectedErrors.push(`${CalculateOption.NORMAL.label} > message: 人数が1人未満になっています。`);
         
         const errors = normal(totalAmount, numberOfPeople);
         expect(errors).toEqual(expectedErrors);
@@ -66,7 +67,7 @@ describe("通常の計算方法のテスト", () => {
         let numberOfPeople = 3;
 
         let expectedErrors = new ErrorArray();
-        expectedErrors.push("通常の計算方法 > message: 会計金額が1円未満になっています。");
+        expectedErrors.push(`${CalculateOption.NORMAL.label} > message: 会計金額が1円未満になっています。`);
         
         const errors = normal(totalAmount, numberOfPeople);
         expect(errors).toEqual(expectedErrors);
