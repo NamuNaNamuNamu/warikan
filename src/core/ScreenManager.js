@@ -24,14 +24,12 @@ export class ScreenManager {
             const button = e.target.closest("button");
             if (!button) return;
 
-            if (button.id === "temp-move-to-screen-input") {
+            if (button.id === "button-start") {
                 this.#changeScreenTo(this.screens.input);
-            } else if (button.id === "temp-back-to-screen-title") {
+            } else if (button.id === "button-finish") {
                 this.#changeScreenTo(this.screens.title);
-            } else if (button.id === "temp-move-to-screen-select-option") {
+            } else if (button.id === "button-next") {
                 this.#changeScreenTo(this.screens.selectOption);
-            } else if (button.id === "temp-back-to-screen-input") {
-                this.#changeScreenTo(this.screens.input);
             } else {
                 throw Error("想定されていないボタンIDを持つボタンが押されました。");
             }
