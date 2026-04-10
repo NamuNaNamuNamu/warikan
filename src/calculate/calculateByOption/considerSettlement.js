@@ -1,19 +1,46 @@
-import { payerCategory } from "../../enum/payerCategory.js"
+// 精算をする人が少し得をする計算方法
+// TODO: test\calculate\calculateByOption\considerSettlement.test.js の結果が通るように要修正
 
-export function considerSettlement(_totalAmount, _numberOfPeople, _extra_info){
-    // TODO: to be implemented in branch "feature/additional_function".
-    console.warn("STUB: considerSettlement() will be implemented in branch \"feature/additional_function\"");
+import { PayerCategory } from "../../enum/PayerCategory.js";
+import { ceilTo } from "./considerSettlement/ceilTo.js";
+import { pushSettlerResult } from "./considerSettlement/pushSettlerResult.js";
+import { validate } from "./considerSettlement/validate.js";
+import { normal } from "./normal.js";
+import { ErrorArray } from "./shared/ErrorArray.js";
+import { pruneExcessElementFrom } from "./shared/pruneExcessElementFrom.js";
 
-    return [
+export function considerSettlement(totalAmount, numberOfPeople, extra_info){
+    let result = [];
+    let errors = new ErrorArray();
+
+    errors.merge(validate(totalAmount, numberOfPeople));
+    if (errors.isNotEmpty()) {
+        return errors;
+    }
+
+    const maximumAppreciationAmount = extra_info.maximumAppreciationAmount;
+    const simpleAmountPerPerson = totalAmount / numberOfPeople;
+
+    if (simpleAmountPerPerson < maximumAppreciationAmount) {
+        return pushSettlerResult(normal(totalAmount, numberOfPeople - 1));
+    }
+
+    const amountOfNormalPerPerson = ceilTo(simpleAmountPerPerson, { unit: maximumAppreciationAmount });
+    const amountOfNormal = amountOfNormalPerPerson * (numberOfPeople - 1);
+    const amountOfSettler = totalAmount - amountOfNormal;
+
+    result.push(
         {
-            payerCategory: payerCategory.settler,
-            amount: 999,
+            payerCategory: PayerCategory.SETTLER,
+            amount: amountOfSettler,
             numberOfPeople: 1
         },
         {
-            payerCategory: payerCategory.normal,
-            amount: 1111,
-            numberOfPeople: 2
+            payerCategory: PayerCategory.NORMAL,
+            amount: amountOfNormalPerPerson,
+            numberOfPeople: numberOfPeople - 1
         }
-    ]
+    );
+
+    return pruneExcessElementFrom(result); 
 }

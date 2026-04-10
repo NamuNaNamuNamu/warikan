@@ -1,24 +1,41 @@
-import { payerCategory } from "../../enum/payerCategory.js";
+// 食べた量によって最大3段階まで支払い量に差をつけられる計算方法
 
-export function considerDifferenceOfPortion(_totalAmount, _numberOfPeople, _extra_info){
-    // TODO: to be implemented in branch "feature/additional_function".
-    console.warn("STUB: considerDifferenceOfPortion() will be implemented in branch \"feature/additional_function\"");
+import { ErrorArray } from "./shared/ErrorArray.js";
+import { validateInput } from "./considerDifferenceOfPortion/validate/validateInput.js";
+import { validateResult } from "./considerDifferenceOfPortion/validate/validateResult.js";
+import { updateRemainderPayALot } from "./considerDifferenceOfPortion/helpers.js";
+import { updateRemainderPayALittle } from "./considerDifferenceOfPortion/helpers.js";
+import { getResultPayALot } from "./considerDifferenceOfPortion/helpers.js";
+import { getResultPayALittle } from "./considerDifferenceOfPortion/helpers.js";
+import { normal } from "./normal.js";
 
-    return [
-        {
-            payerCategory: payerCategory.payALot,
-            amount: 1111,
-            numberOfPeople: 1
-        },
-        {
-            payerCategory: payerCategory.payALittle,
-            amount: 888,
-            numberOfPeople: 2
-        },
-        {
-            payerCategory: payerCategory.normal,
-            amount: 999,
-            numberOfPeople: 2
-        }
-    ];
+export function considerDifferenceOfPortion(totalAmount, numberOfPeople, extra_info){
+    let result = [];
+    let errors = new ErrorArray();
+
+    let remainder = {
+        amount: totalAmount,
+        numberOfPeople: numberOfPeople
+    };
+
+    errors.merge(validateInput(totalAmount, numberOfPeople, extra_info));
+    if (errors.isNotEmpty()) {
+        return errors;
+    }
+
+    updateRemainderPayALot(remainder, extra_info);
+    result.push(getResultPayALot(extra_info));
+
+    updateRemainderPayALittle(remainder, extra_info);
+    result.push(getResultPayALittle(extra_info));
+
+    // 残りをノーマルの計算方法で算出
+    result = result.concat(normal(remainder.amount, remainder.numberOfPeople));
+
+    errors.merge(validateResult(result));
+    if (errors.isNotEmpty()) {
+        return errors;
+    }
+
+    return result;
 }

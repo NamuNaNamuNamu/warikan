@@ -1,11 +1,4 @@
-export const calculateOption = Object.freeze({
-    normal: 0,
-    considerSettlement: 1,
-    considerDifferenceOfPortion: 2,
-});
-
-// TODO: feature/additional_function で enhanced-enum ブランチを取り込んだらこちらに置き換える。
-export const CalculateOptionReplaced = Object.freeze({
+export const CalculateOption = Object.freeze({
     NORMAL: {
         label: "通常計算",
         description: "通常の計算方法"
