@@ -1,10 +1,10 @@
-import { inputNumPeople } from "../screens/input/inputNumPeople.js";
-import { inputTotalAmount } from "../screens/input/inputTotalAmount.js";
-import { inputAmountPayALittle } from "../screens/selectOption/inputAmountPayALittle.js";
-import { inputAmountPayALot } from "../screens/selectOption/inputAmountPayALot.js";
-import { inputMaximumAppreciationAmount } from "../screens/selectOption/inputMaximumAppreciationAmount.js";
-import { inputNumPeoplePayALittle } from "../screens/selectOption/inputNumPeoplePayALittle.js";
-import { inputNumPeoplePayALot } from "../screens/selectOption/inputNumPeoplePayALot.js";
+import { inputNumPeople } from "../inputs/inputNumPeople.js";
+import { inputTotalAmount } from "../inputs/inputTotalAmount.js";
+import { inputAmountPayALittle } from "../inputs/inputAmountPayALittle.js";
+import { inputAmountPayALot } from "../inputs/inputAmountPayALot.js";
+import { inputMaximumAppreciationAmount } from "../inputs/inputMaximumAppreciationAmount.js";
+import { inputNumPeoplePayALittle } from "../inputs/inputNumPeoplePayALittle.js";
+import { inputNumPeoplePayALot } from "../inputs/inputNumPeoplePayALot.js";
 
 class TextInputBinder {
     #textInputs = [
