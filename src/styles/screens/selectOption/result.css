@@ -19,7 +19,7 @@
 .screen-select-option .area--app-body .area--body .area--result .area--others .area--body > div {
     flex: 60;
 
-    display: grid;
+    display: none;
     grid-template-columns:
         5em                     /* payer-category */
         clamp(1em, 6vw, 8em)    /* num-people */
@@ -30,6 +30,10 @@
 
     align-items: center;
     column-gap: 0;
+}
+
+.screen-select-option .area--app-body .area--body .area--result .area--others .area--body > div.is-active {
+    display: grid;
 }
 
 .screen-select-option .area--app-body .area--body .area--result .area--others .area--body > div > span {

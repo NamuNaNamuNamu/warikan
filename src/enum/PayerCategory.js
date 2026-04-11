@@ -1,27 +1,32 @@
 export const PayerCategory = Object.freeze({
     NORMAL: {
-        label: "普通に払う人"
+        label: "普通に払う人",
+        html: "normal"
     },
     NORMAL_ADJUSTER: {
-        label: "端数分多く払う人"
+        label: "端数分多く払う人",
+        html: "normal-adjuster"
     },
     SETTLER: {
-        label: "精算係"
+        label: "精算係",
+        html: "settler"
     },
     PAY_A_LOT: {
-        label: "多く払う人"
+        label: "多く払う人",
+        html: "pay-a-lot"
     },
     PAY_A_LITTLE: {
-        label: "少なく払う人"
+        label: "少なく払う人",
+        html: "pay-a-little"
     }
 });
 
 const PayerCategoryKey = Object.freeze({
-    normal,
-    normalAdjuster,
-    settler,
-    payALittle,
-    payALot
+    normal: "normal",
+    normalAdjuster: "normalAdjuster",
+    settler: "settler",
+    payALittle: "payALittle",
+    payALot: "payALot"
 });
 
 // TODO: キー周りでごちゃごちゃしてきたので整理する。
