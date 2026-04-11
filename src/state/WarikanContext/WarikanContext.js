@@ -87,3 +87,5 @@ class WarikanContext {
         return { ...this.#payALittle };
     }
 }
+
+export const warikanContext = new WarikanContext();
