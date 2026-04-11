@@ -4,8 +4,8 @@ class WarikanContext {
     #totalAmount;
     #numPeople;
     #maximumAppreciationAmount;
-    #payALot;
-    #payALittle;
+    #payALot = { amount: null, numPeople: null };
+    #payALittle = { amount: null, numPeople: null };
 
     constructor ({
         totalAmount = null,
