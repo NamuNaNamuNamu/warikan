@@ -11,6 +11,10 @@ export class TextInput {
         return this.#htmlElement();
     }
 
+    initialize () {
+        this.#getHtmlElement().value = "";
+    }
+
     getText () {
         return this.#getHtmlElement().value;
     }

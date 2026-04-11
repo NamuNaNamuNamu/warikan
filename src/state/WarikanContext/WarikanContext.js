@@ -4,23 +4,19 @@ class WarikanContext {
     #totalAmount;
     #numPeople;
     #maximumAppreciationAmount;
-    #payALot = { amount: null, numPeople: null };
-    #payALittle = { amount: null, numPeople: null };
+    #payALot;
+    #payALittle;
 
-    constructor ({
-        totalAmount = null,
-        numPeople = null,
-        maximumAppreciationAmount = null,
-        payALot = {},
-        payALittle = {}
-    } = {}) {
-        this.setTotalAmount(totalAmount);
-        this.setNumPeople(numPeople);
-        this.setMaximumAppreciationAmount(maximumAppreciationAmount)
-        this.setPayALotAmount(payALot.amount ?? null);
-        this.setPayALotNumPeople(payALot.numPeople ?? null);
-        this.setPayALittleAmount(payALittle.amount ?? null);
-        this.setPayALittleNumPeople(payALittle.numPeople ?? null);
+    constructor () {
+        this.initialize();
+    }
+
+    initialize () {
+        this.#totalAmount = null;
+        this.#numPeople = null
+        this.#maximumAppreciationAmount = null
+        this.#payALot = { amount: null, numPeople: null };
+        this.#payALittle = { amount: null, numPeople: null };
     }
 
     setTotalAmount (amount) {
@@ -47,35 +43,35 @@ class WarikanContext {
         return this.#maximumAppreciationAmount;
     }
 
-    setPayALotAmount (amount) {
+    setAmountPayALot (amount) {
         this.#payALot.amount = amount;
     }
 
-    getPayALotAmount () {
+    getAmountPayALot () {
         return this.#payALot.amount;
     }
 
-    setPayALotNumPeople (numPeople) {
+    setNumPeoplePayALot (numPeople) {
         this.#payALot.numPeople = numPeople;
     }
 
-    getPayALotNumPeople () {
+    getNumPeoplePayALot () {
         return this.#payALot.numPeople;
     }
 
-    setPayALittleAmount (amount) {
+    setAmountPayALittle (amount) {
         this.#payALittle.amount = amount;
     }
 
-    getPayALittleAmount () {
+    getAmountPayALittle () {
         return this.#payALittle.amount;
     }
 
-    setPayALittleNumPeople (numPeople) {
+    setNumPeoplePayALittle (numPeople) {
         this.#payALittle.numPeople = numPeople;
     }
 
-    getPayALittleNumPeople () {
+    getNumPeoplePayALittle () {
         return this.#payALittle.numPeople;
     }
 

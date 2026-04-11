@@ -6,7 +6,7 @@ import { inputMaximumAppreciationAmount } from "../screens/selectOption/inputMax
 import { inputNumPeoplePayALittle } from "../screens/selectOption/inputNumPeoplePayALittle.js";
 import { inputNumPeoplePayALot } from "../screens/selectOption/inputNumPeoplePayALot.js";
 
-class TextInputBinder {
+class TextInputInitializer {
     #textInputs = [
         inputTotalAmount,
         inputNumPeople,
@@ -18,11 +18,11 @@ class TextInputBinder {
         inputNumPeoplePayALittle
     ];
 
-    bindAll () {
+    initializeAll () {
         for (const input of this.#textInputs) {
-            input.startReceivingInput();
+            input.initialize();
         }
     }
 }
 
-export const textInputBinder = new TextInputBinder();
+export const textInputInitializer = new TextInputInitializer();
