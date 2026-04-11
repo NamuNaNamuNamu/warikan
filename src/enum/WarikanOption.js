@@ -1,4 +1,4 @@
-export const CalculateOption = Object.freeze({
+export const WarikanOption = Object.freeze({
     NORMAL: {
         label: "通常計算",
         description: "通常の計算方法"
