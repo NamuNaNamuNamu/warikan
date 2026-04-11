@@ -15,3 +15,11 @@ export const PayerCategory = Object.freeze({
         label: "少なく払う人"
     }
 });
+
+export function getPayerCategoryKey (payerCategory) {
+    if (payerCategory === PayerCategory.NORMAL) { return "normal" };
+    if (payerCategory === PayerCategory.NORMAL_ADJUSTER) { return "normalAdjuster" };
+    if (payerCategory === PayerCategory.SETTLER) { return "settler" };
+    if (payerCategory === PayerCategory.PAY_A_LITTLE) { return "payALittle" };
+    if (payerCategory === PayerCategory.PAY_A_LOT) { return "payALot" };
+}
