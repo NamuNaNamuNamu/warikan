@@ -1,6 +1,7 @@
 import { calculate } from "../calculate/calculate.js";
 import { WarikanOption } from "../enum/WarikanOption.js";
 import { warikanContext } from "../state/WarikanContext/WarikanContext.js";
+import { warikanOptionState } from "../state/WarikanOptionState.js";
 
 class WarikanCalculationExecutor {
     execute () {
@@ -23,6 +24,9 @@ class WarikanCalculationExecutor {
     }
 
     #judgeOption () {
+        if (warikanOptionState.getConsiderSettlement()) {
+            return WarikanOption.CONSIDER_SETTLEMENT;
+        }
         return WarikanOption.NORMAL;
     }
 }
