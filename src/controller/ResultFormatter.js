@@ -1,7 +1,7 @@
 // NOTE: もうすでに作ってしまった各計算ロジックの出力結果を扱いやすくするためのクラス
 // body に既存の出力結果を入れる。
 
-import { getPayerCategoryKey } from "../../../enum/PayerCategory.js";
+import { getPayerCategoryKey } from "../enum/PayerCategory.js";
 
 class ResultFormatter {
     format (result) {

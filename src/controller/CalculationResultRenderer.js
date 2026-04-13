@@ -1,4 +1,4 @@
-import { resultFormatter } from "../calculate/calculateByOption/shared/ResultFormatter.js";
+import { resultFormatter } from "../controller/ResultFormatter.js";
 import { warikanResult } from "../screens/selectOption/WarikanResult.js";
 
 class CalculationResultRenderer {
