@@ -1,7 +1,7 @@
 import { resultFormatter } from "../controller/ResultFormatter.js";
-import { getPayerCategories, getPayerCategory, getPayerCategoryKey, PayerCategory } from "../enum/PayerCategory.js";
+import { getPayerCategory, getPayerCategoryKey, PayerCategory } from "../enum/PayerCategory.js";
+import { getResultHtmlElement, ResultHtmlElement } from "../enum/ResultHtmlElement.js";
 import { warikanResult } from "../screens/selectOption/WarikanResult.js";
-import { animateNumber } from "../utils/animateNumber.js";
 import { hasSameElements } from "../utils/hasSameElements.js";
 
 class CalculationResultRenderer {
@@ -10,19 +10,22 @@ class CalculationResultRenderer {
         const outputs = this.#getTextToDisplay(formattedResult);
         const payerCategoryKeys = Object.keys(outputs);
 
+        warikanResult.hideAll();
+
         for (const payerCategoryKey of payerCategoryKeys) {
-            for (const key of Object.keys(outputs[payerCategoryKey])) {
+            for (const resultHtmlElementKey of Object.keys(outputs[payerCategoryKey])) {
                 const payerCategory = getPayerCategory(payerCategoryKey);
-                const element = warikanResult.getHtmlElement(payerCategory);
-                const htmlClass = this.#toHtmlClassName(key);
-                const htmlElement = element.querySelector(`.${htmlClass}`);
-                
-                this.#renderHtml({ updateTarget: htmlElement, updatedNumber: outputs[payerCategoryKey][key] });
+                const resultHtmlElement = getResultHtmlElement(resultHtmlElementKey);
+
+                warikanResult.display(payerCategory);
+                warikanResult.updateValue({
+                    payerCategory: payerCategory,
+                    resultHtmlElement: resultHtmlElement,
+                    value: outputs[payerCategoryKey][resultHtmlElementKey],
+                    isAnimated: resultHtmlElement === ResultHtmlElement.AMOUNT ? true : false
+                });
             }
         }
-
-        const payerCategories = getPayerCategories(payerCategoryKeys);
-        warikanResult.display(payerCategories);
     }
 
     #getTextToDisplay (formattedResult) {
@@ -37,12 +40,12 @@ class CalculationResultRenderer {
             unitAmount = "円"
         }) => {
             return {
-                payerCategory,
-                numPeople,
-                unitNumPeople,
-                ha,
-                amount,
-                unitAmount
+                [ResultHtmlElement.PAYER_CATEGORY.key]: payerCategory,
+                [ResultHtmlElement.NUM_PEOPLE.key]: numPeople,
+                [ResultHtmlElement.UNIT_NUM_PEOPLE.key]: unitNumPeople,
+                [ResultHtmlElement.HA.key]: ha,
+                [ResultHtmlElement.AMOUNT.key]: amount,
+                [ResultHtmlElement.UNIT_AMOUNT.key]: unitAmount
             };
         };
 
@@ -103,46 +106,6 @@ class CalculationResultRenderer {
                 })
             }
         }
-    }
-
-    #toHtmlClassName (key) {
-        const dict = {
-            payerCategory: "payer-category",
-            numPeople: "num-people",
-            unitNumPeople: "unit-num-people",
-            ha: "ha",
-            amount: "amount",
-            unitAmount: "unit-amount"
-        }
-
-        return dict[key];
-    }
-
-    #renderHtml ({ updateTarget, updatedNumber, isAnimated = false }) {
-        if (isAnimated) {
-            this.#animateNumber (updateTarget, updatedNumber);
-            return;
-        }
-            
-        updateTarget.innerHTML = updatedNumber;
-    }
-
-    #animateNumber (updateTarget, updatedNumber) {
-        const start = Number(updateTarget.innerHTML);
-
-        if (!Number.isFinite(start)) {
-            updateTarget.innerHTML = updatedNumber;
-            return;
-        }
-
-        animateNumber({
-            start: start,
-            end: updatedNumber,
-            duration: 700,
-            onUpdate: (value) => {
-                updateTarget.innerHTML = value;
-            }
-        });
     }
 }
 
