@@ -106,6 +106,23 @@ class CalculationResultRenderer {
                 })
             }
         }
+
+        // WarikanOption.CONSIDER_DIFFERENCE_OF_PORTION
+        if (hasSameElements(payerCategoryKeys, [
+            getPayerCategoryKey(PayerCategory.PAY_A_LOT),
+            getPayerCategoryKey(PayerCategory.NORMAL),
+        ])) {
+            return {
+                [getPayerCategoryKey(PayerCategory.PAY_A_LOT)]: makeOutput({
+                    payerCategory: PayerCategory.PAY_A_LOT.label,
+                    numPeople: formattedResult[getPayerCategoryKey(PayerCategory.PAY_A_LOT)].numberOfPeople,
+                    amount: formattedResult[getPayerCategoryKey(PayerCategory.PAY_A_LOT)].amount
+                })
+            }
+        }
+
+        console.error(formattedResult);
+        throw Error("想定外のワリカン結果出力パターンです。")
     }
 }
 

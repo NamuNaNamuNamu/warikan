@@ -8,26 +8,47 @@ class WarikanCalculationExecutor {
         const totalAmount = warikanContext.getTotalAmount();
         const numberOfPeople = warikanContext.getNumPeople();
         const option = this.#judgeOption();
-        const extra_info = {
-            maximumAppreciationAmount: warikanContext.getMaximumAppreciationAmount(),
-            payALot: {
-                amount: warikanContext.getAmountPayALot(),
-                numberOfPeople: warikanContext.getNumPeoplePayALot()
-            },
-            payALittle: {
-                amount: warikanContext.getAmountPayALittle(),
-                numberOfPeople: warikanContext.getNumPeoplePayALittle()
-            },
-        };
+        const extraInfo = this.#getExtraInfo();
 
-        return calculate(totalAmount, numberOfPeople, option, extra_info);
+        return calculate(totalAmount, numberOfPeople, option, extraInfo);
     }
 
     #judgeOption () {
+        // TODO: issue 17 (https://github.com/NamuNaNamuNamu/warikan/issues/17)
+        if (warikanOptionState.getConsiderDifferenceOfPortion()) {
+            return WarikanOption.CONSIDER_DIFFERENCE_OF_PORTION;
+        }
+
         if (warikanOptionState.getConsiderSettlement()) {
             return WarikanOption.CONSIDER_SETTLEMENT;
         }
         return WarikanOption.NORMAL;
+    }
+
+    #getExtraInfo () {
+        const extraInfo = {};
+
+        if (warikanOptionState.getConsiderDifferenceOfPortion()) {
+            if (warikanOptionState.getPayALot()) {
+                extraInfo["payALot"] = {
+                    amount: warikanContext.getAmountPayALot(),
+                    numberOfPeople: warikanContext.getNumPeoplePayALot()
+                };
+            }
+
+            if (warikanOptionState.getPayALittle()) {
+                extraInfo["payALittle"] = {
+                    amount: warikanContext.getAmountPayALittle(),
+                    numberOfPeople: warikanContext.getNumPeoplePayALittle()
+                };
+            }
+        }
+
+        if (warikanOptionState.getConsiderSettlement()) {
+            extraInfo["maximumAppreciationAmount"] = warikanContext.getMaximumAppreciationAmount();
+        }
+
+        return extraInfo;
     }
 }
 
