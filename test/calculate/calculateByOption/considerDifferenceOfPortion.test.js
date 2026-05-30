@@ -41,4 +41,56 @@ describe("飲食量考慮オプションのテスト", () => {
             }
         ]);
     });
+
+    test("多く払う人のみ指定されているパターン", () => {
+        let totalAmount = 8000;
+        let numberOfPeople = 3;
+
+        let extra_info = {
+            payALot: {
+                amount: 3000,
+                numberOfPeople: 2
+            },
+        }
+        
+        const result = considerDifferenceOfPortion(totalAmount, numberOfPeople, extra_info);
+        expect(result).toEqual([
+            {
+                payerCategory: PayerCategory.PAY_A_LOT,
+                amount: 3000,
+                numberOfPeople: 2
+            },
+            {
+                payerCategory: PayerCategory.NORMAL,
+                amount: 2000,
+                numberOfPeople: 1
+            }
+        ]);
+    });
+
+    test("少なく払う人のみ指定されているパターン", () => {
+        let totalAmount = 8000;
+        let numberOfPeople = 3;
+
+        let extra_info = {
+            payALittle: {
+                amount: 2000,
+                numberOfPeople: 2
+            },
+        }
+        
+        const result = considerDifferenceOfPortion(totalAmount, numberOfPeople, extra_info);
+        expect(result).toEqual([
+            {
+                payerCategory: PayerCategory.PAY_A_LITTLE,
+                amount: 2000,
+                numberOfPeople: 2
+            },
+            {
+                payerCategory: PayerCategory.NORMAL,
+                amount: 4000,
+                numberOfPeople: 1
+            }
+        ]);
+    });
 });
