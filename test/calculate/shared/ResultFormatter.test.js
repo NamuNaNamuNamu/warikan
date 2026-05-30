@@ -1,4 +1,4 @@
-import { resultFormatter } from "../../../src/calculate/calculateByOption/shared/ResultFormatter.js";
+import { resultFormatter } from "../../../src/controller/ResultFormatter.js";
 import { getPayerCategoryKey, PayerCategory } from "../../../src/enum/PayerCategory.js";
 
 describe("ResultFormatter のテスト", () => {

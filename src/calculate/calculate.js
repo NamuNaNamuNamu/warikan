@@ -11,18 +11,18 @@
 // - 金額
 // - その金額を払う人数
 
-import { CalculateOption } from "../enum/CalculateOption.js";
+import { WarikanOption } from "../enum/WarikanOption.js";
 import { considerDifferenceOfPortion } from "./calculateByOption/considerDifferenceOfPortion.js";
 import { considerSettlement } from "./calculateByOption/considerSettlement.js";
 import { normal } from "./calculateByOption/normal.js";
 
 export function calculate(totalAmount, numberOfPeople, option, extra_info){
     switch (option) {
-        case CalculateOption.NORMAL:
+        case WarikanOption.NORMAL:
             return normal(totalAmount, numberOfPeople);
-        case CalculateOption.CONSIDER_SETTLEMENT:
+        case WarikanOption.CONSIDER_SETTLEMENT:
             return considerSettlement(totalAmount, numberOfPeople, extra_info);
-        case CalculateOption.CONSIDER_DIFFERENCE_OF_PORTION:
+        case WarikanOption.CONSIDER_DIFFERENCE_OF_PORTION:
             return considerDifferenceOfPortion(totalAmount, numberOfPeople, extra_info);
         default:
             throw Error("Selected option is not defined.");

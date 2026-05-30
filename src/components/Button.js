@@ -8,7 +8,7 @@ export class Button {
     }
 
     #getHtmlElement () {
-        return this.#htmlElement()
+        return this.#htmlElement();
     }
 
     startReceivingClick () {

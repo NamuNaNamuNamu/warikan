@@ -1,5 +1,5 @@
 import { calculate } from "../../src/calculate/calculate.js";
-import { CalculateOption } from "../../src/enum/CalculateOption.js";
+import { WarikanOption } from "../../src/enum/WarikanOption.js";
 import { normal } from "../../src/calculate/calculateByOption/normal.js";
 import { considerSettlement } from "../../src/calculate/calculateByOption/considerSettlement.js";
 import { considerDifferenceOfPortion } from "../../src/calculate/calculateByOption/considerDifferenceOfPortion.js";
@@ -27,7 +27,7 @@ describe("calculate 関数の条件分岐テスト", () => {
     test("通常の計算方法", () => {
         let totalAmount = 10000;
         let numberOfPeople = 3;
-        let option = CalculateOption.NORMAL;
+        let option = WarikanOption.NORMAL;
         let extra_info = {};
 
         const _unusedValue = calculate(totalAmount, numberOfPeople, option, extra_info);
@@ -37,7 +37,7 @@ describe("calculate 関数の条件分岐テスト", () => {
     test("精算係ありがとうオプション", () => {
         let totalAmount = 9248;
         let numberOfPeople = 3;
-        let option = CalculateOption.CONSIDER_SETTLEMENT;
+        let option = WarikanOption.CONSIDER_SETTLEMENT;
         let extra_info = {
             maximumAppreciationAmount: 100, // 最大ありがとう額
         };
@@ -49,7 +49,7 @@ describe("calculate 関数の条件分岐テスト", () => {
     test("飲食量考慮オプション", () => {
         let totalAmount = 16247;
         let numberOfPeople = 5;
-        let option = CalculateOption.CONSIDER_DIFFERENCE_OF_PORTION;
+        let option = WarikanOption.CONSIDER_DIFFERENCE_OF_PORTION;
         let extra_info = {
             payALot: {
                 amount: 4000,
